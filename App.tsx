@@ -7,6 +7,7 @@ import PrivacyPolicyScreen from './screens/PrivacyPolicy';
 import TermsAndConditionScreen from './screens/TermsAndCondition'
 import LanguageScreen from "./screens/Language";
 import MyAddressScreen from "./screens/Address";
+import EditProfileScreen from "./screens/EditProfile";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const App = () => {
           <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} options={{ title: 'Privacy Policy', headerTitleStyle:{fontWeight: 'bold'} }} />
           <Stack.Screen name="Language" component={LanguageScreen} options={{ title: 'Language', headerTitleStyle:{fontWeight: 'bold'} }} />
             <Stack.Screen name="Address" component={MyAddressScreen} options={{ title: 'My Address', headerTitleStyle:{fontWeight: 'bold'} }} />
+            <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Edit Profile', headerTitleStyle:{fontWeight: 'bold'} }} />
 
         </Stack.Navigator>
       </NavigationContainer>

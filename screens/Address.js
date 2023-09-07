@@ -139,17 +139,27 @@ const styles = StyleSheet.create({
         height: 22, // Set the height
         resizeMode: 'contain',
     },
+
     addButton: {
-        backgroundColor: 'blue',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: 'navy',
+        borderRadius: 10,
         paddingVertical: 12,
-        borderRadius: 5,
+        alignItems: 'center',
+        width: '100%',
+        marginTop: 'auto', // Push the button to the bottom
+        marginBottom: 16,
+        shadowColor: 'rgba(0, 0, 0, 0.2)',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 1,
+        shadowRadius: 5,
+        elevation: 2,
     },
     addButtonText: {
         color: 'white',
         fontSize: 18,
+        fontWeight: 'bold',
     },
+
     title:{
     fontSize: 18,
     color: '#181818', // Default text color

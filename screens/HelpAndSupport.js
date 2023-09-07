@@ -1,7 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
-import { Button } from 'react-native-elements';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity ,Image} from "react-native";
 import { useNavigation } from '@react-navigation/native';
+
+// Import your call and mail icons as images
+import callIcon from '../assets/icons8-call-50.png';
+import mailIcon from '../assets/icons8-mail-50.png';
+
+
+
 
 const HelpAndSupportScreen = () => {
 
@@ -17,47 +23,48 @@ const HelpAndSupportScreen = () => {
   };
 
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Need some help?</Text>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={callDetails}>
-          <Text style={styles.buttonText}>  Call us  </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={mailDetails}>
-          <Text style={styles.buttonText}>  Mail us  </Text>
+  return (
+      <View style={styles.container}>
+        <Text style={styles.title}>Need some help?</Text>
+
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.callButton} onPress={callDetails}>
+            <Image source={callIcon} style={styles.buttonIcon} />
+            <Text style={styles.buttonText}>Call us</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mailButton} onPress={mailDetails}>
+            <Image source={mailIcon} style={styles.buttonIcon} />
+            <Text style={styles.buttonText}>Mail us</Text>
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.subtitleMain}>Write message here</Text>
+        <Text style={styles.subtitle}>Name</Text>
+        <TextInput
+            style={styles.input}
+            placeholder="Enter your Name"
+        />
+        <Text style={styles.subtitle}>Email address</Text>
+        <TextInput
+            style={styles.input}
+            placeholder="Enter your email address"
+            keyboardType="email-address"
+        />
+        <Text style={styles.subtitle}>Message</Text>
+        <TextInput
+            style={styles.textArea}
+            placeholder="Write message here"
+            multiline={true}
+        />
+
+        <TouchableOpacity
+            style={styles.submitButton}
+            onPress={handleSubmit}
+        >
+          <Text style={styles.submitButtonText}>Submit</Text>
         </TouchableOpacity>
       </View>
-
-      <Text style={styles.title}>Write message here</Text>
-      <Text style={styles.subtitle}>Name</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter your Name"
-      />
-      <Text style={styles.subtitle}>Email address</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Enter your email address"
-        keyboardType="email-address"
-      />
-      <Text style={styles.subtitle}>Message</Text>
-      <TextInput
-        style={styles.textArea}
-        placeholder="Write message here"
-        multiline = {true}
-
-
-      />
-
-      <Button style={styles.submitButton}
-        title="Submit"
-        onPress={handleSubmit}
-        color="#000080"
-      />
-
-    </View>
   );
 };
 
@@ -73,8 +80,16 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 18,
-    marginBottom: 8,
+    marginBottom: 10,
+    marginTop:6,
+    fontWeight:'bold',
 
+  },
+  subtitleMain: {
+    fontSize: 20,
+    marginBottom: 10,
+    marginTop: 6,
+    fontWeight: 'bold',
   },
   buttonContainer: {
     marginTop: 10,
@@ -92,44 +107,31 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderWidth: 2,
+    borderWidth: 9,
     marginBottom: 16,
+    marginTop:10,
     padding: 10,
+    paddingVertical:20,
     borderRadius:10,
     backgroundColor:'#fff',
     borderColor:'#fff',
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 3
-  },
-  button: {
-    borderRadius:10,
-    borderWidth:1,
-    width:'35%',
-    backgroundColor:'#f8f8ff',  // Customize button color
-    padding: 12,
-    margin: 20,
-    marginTop:2,
-    marginBottom:20,
-    borderColor:'#fff',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 1, height: 3 },
     shadowOpacity: 0.2,
     shadowRadius: 2,
     elevation: 3,
-    fontSize:20,
-    alignItems:'center',
+    textAlignVertical:"top",
   },
+
   buttonText: {
-    color: '#4169E1',
+    color: '#293E73',
     fontSize: 18,
   },
   textArea: {
     borderColor: '#fff',
     borderWidth: 2,
     marginBottom: 15,
+    marginTop:10,
     padding: 10,
     borderRadius:20,
     minHeight:100,
@@ -141,14 +143,70 @@ const styles = StyleSheet.create({
     elevation: 3
 
   },
-   submitButton:{
-    width:'50%',
-    backgroundColor:'#000080',
-     marginTop: 'auto',
-     borderRadius: 8,
-     paddingVertical: 12,
-     paddingHorizontal: 16,
+
+  submitButton: {
+    backgroundColor: 'navy',
+    borderRadius: 10,
+    paddingVertical: 12,
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 'auto', // Push the button to the bottom
+    marginBottom: 16,
+    shadowColor: 'rgba(0, 0, 0, 0.2)',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 1,
+    shadowRadius: 5,
+    elevation: 2,
   },
-});
+  submitButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  callButton: {
+    borderRadius: 10,
+    borderWidth: 1,
+    flexDirection:'row',
+    width: '35%',
+    backgroundColor: '#fff',
+    padding: 16,
+    margin: 20,
+    marginTop: 2,
+    marginBottom: 20,
+    borderColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3, // Adjusted shadow opacity
+    shadowRadius: 3, // Adjusted shadow radius
+    elevation: 3,
+    fontSize: 20,
+    alignItems: 'center',
+  },
+  mailButton: {
+    borderRadius: 10,
+    borderWidth: 1,
+    flexDirection:'row',
+    width: '35%',
+    backgroundColor: '#fff' ,
+    padding: 16,
+    margin: 20,
+    marginTop: 2,
+    marginBottom: 20,
+    borderColor: '#fff',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3, // Adjusted shadow opacity
+    shadowRadius: 3, // Adjusted shadow radius
+    elevation: 3,
+    fontSize: 20,
+    alignItems: 'center',
+  },
+  buttonIcon: {
+    width: 24, // Adjust the width and height as needed
+    height: 24,
+    marginRight: 10, // Add some spacing between the icon and text
+  },
+
+  });
 
 export default HelpAndSupportScreen;

@@ -55,13 +55,14 @@ const ProfileScreen = ({ navigation }) => {
       navigation.navigate('TermsAndCondition');
     }else if (action === 'privacyPolicy') {
       navigation.navigate('PrivacyPolicy');
-    }
-    else if (action === 'logout') {
+    } else if (action === 'logout') {
       toggleLogoutModal();
-    }
-    else if (action === 'myAddress') {
+    } else if (action === 'myAddress') {
       navigation.navigate('Address');
+    } else if (action === 'editProfile') {
+      navigation.navigate('EditProfile');
     }
+
   };
 
   return (
