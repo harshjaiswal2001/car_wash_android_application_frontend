@@ -8,6 +8,9 @@ import TermsAndConditionScreen from './screens/TermsAndCondition'
 import LanguageScreen from "./screens/Language";
 import MyAddressScreen from "./screens/Address";
 import EditProfileScreen from "./screens/EditProfile";
+import MyCarScreen from './screens/MyCar';
+import EditCarScreen from "./screens/EditCar";
+import AddCarScreen from "./screens/Addcar";
 
 const Stack = createStackNavigator();
 
@@ -22,7 +25,9 @@ const App = () => {
           <Stack.Screen name="Language" component={LanguageScreen} options={{ title: 'Language', headerTitleStyle:{fontWeight: 'bold'} }} />
             <Stack.Screen name="Address" component={MyAddressScreen} options={{ title: 'My Address', headerTitleStyle:{fontWeight: 'bold'} }} />
             <Stack.Screen name="EditProfile" component={EditProfileScreen} options={{ title: 'Edit Profile', headerTitleStyle:{fontWeight: 'bold'} }} />
-
+            <Stack.Screen name="MyCar" component={MyCarScreen} options={{ title: 'My car', headerTitleStyle:{fontWeight: 'bold'} }} />
+            <Stack.Screen name="EditCar" component={EditCarScreen} options={{ title: 'Edit car details', headerTitleStyle:{fontWeight: 'bold'} }} />
+            <Stack.Screen name="AddCar" component={AddCarScreen} options={{ title: 'Add new car', headerTitleStyle:{fontWeight: 'bold'} }} />
         </Stack.Navigator>
       </NavigationContainer>
   );

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import cameraIcon from '../assets/icons8-camera-30.png';
 import Modal from "react-native-modal";
+import { RNCamera } from 'react-native-camera';
+import { Platform, PermissionsAndroid } from 'react-native';
+import { launchImageLibrary } from 'react-native-image-picker';
+
+
 
 //importing icons for modal overlay
 import galleryIcon from '../assets/icons8-gallery-48.png';
@@ -21,6 +26,32 @@ const EditProfileScreen = ({ navigation }) => {
     const [message, setMessage] = useState('');
     const [isMessageVisible, setMessageVisible] = useState(false);
 
+
+    async function requestCameraPermission() {
+        if (Platform.OS === 'android') {
+            try {
+                const granted = await PermissionsAndroid.request(
+                    PermissionsAndroid.PERMISSIONS.CAMERA,
+                    {
+                        title: 'Camera Permission',
+                        message: 'App needs camera access for taking photos',
+                    }
+                );
+                if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+                    return true;
+                } else {
+                    console.log('Camera permission denied');
+                    return false;
+                }
+            } catch (err) {
+                console.warn(err);
+                return false;
+            }
+        } else {
+            // iOS does not require explicit permission
+            return true;
+        }
+    }
 
     const handleSaveChanges = () => {
         // Implement logic to save changes to the user's profile
@@ -54,6 +85,43 @@ const EditProfileScreen = ({ navigation }) => {
         // Close the modal
         toggleModal();
     };
+
+
+    const handleOpenCamera = async () => {
+        const hasCameraPermission = await requestCameraPermission();
+        if (hasCameraPermission) {
+            // Open the camera
+            setIsModalVisible(false); // Close the modal first
+            // Now, you can open the camera using the RNCamera component
+            // You can implement this part based on the documentation of react-native-camera
+        }
+    };
+
+
+    const handleSelectFromGallery = () => {
+        const options = {
+            mediaType: 'photo', // Specify that you want to pick photos
+        };
+
+        launchImageLibrary(options, (response) => {
+            if (response.didCancel) {
+                // User cancelled image picker
+            } else if (response.error) {
+                // Handle errors from the image picker
+                console.error('ImagePicker Error:', response.error);
+            } else {
+                // Handle the selected image
+                const selectedImageUri = response.uri;
+
+                // Set the profile picture to the selected image
+                setProfilePicture({ uri: selectedImageUri });
+
+                // Close the modal
+                toggleModal();
+            }
+        });
+    };
+
 
 
 
@@ -115,11 +183,11 @@ const EditProfileScreen = ({ navigation }) => {
                     <View style={styles.modalContent}>
                         <Text style={styles.modalTitle}>Change profile Photo</Text>
                         <View style={styles.modalButtonContainer}>
-                            <TouchableOpacity style={styles.modalButton}>
+                            <TouchableOpacity style={styles.modalButton} onPress={handleOpenCamera}>
                                 <Image source={cameraIcon} style={styles.modalIcon} />
                                 <Text style={styles.modalButtonText}>Camera</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.modalButton}>
+                            <TouchableOpacity style={styles.modalButton} onPress={handleSelectProfilePicture}>
                                 <Image source={galleryIcon} style={styles.modalIcon} />
                                 <Text style={styles.modalButtonText}>Gallery</Text>
                             </TouchableOpacity>
@@ -309,6 +377,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
     },
+
 });
 
 export default EditProfileScreen;
