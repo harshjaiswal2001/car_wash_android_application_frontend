@@ -62,6 +62,8 @@ const ProfileScreen = ({ navigation }) => {
       navigation.navigate('EditProfile');
     } else if (action === 'myCar') {
       navigation.navigate('MyCar');
+    }else if (action === 'favorite') {
+      navigation.navigate('Favorite');
     }
 
 
