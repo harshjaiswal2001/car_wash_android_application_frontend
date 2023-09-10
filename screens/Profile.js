@@ -30,7 +30,6 @@ const ProfileScreen = ({ navigation }) => {
 
   const [isLogoutModalVisible, setLogoutModalVisible] = useState(false);
 
-  // Function to toggle the signout confirmation modal
   const toggleLogoutModal = () => {
     setLogoutModalVisible(!isLogoutModalVisible);
   };
@@ -61,7 +60,10 @@ const ProfileScreen = ({ navigation }) => {
       navigation.navigate('Address');
     } else if (action === 'editProfile') {
       navigation.navigate('EditProfile');
+    } else if (action === 'myCar') {
+      navigation.navigate('MyCar');
     }
+
 
   };
 

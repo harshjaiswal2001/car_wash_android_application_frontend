@@ -12,16 +12,14 @@ import { launchImageLibrary } from 'react-native-image-picker';
 import galleryIcon from '../assets/icons8-gallery-48.png';
 import removeIcon from '../assets/icons8-remove-50.png';
 
-const EditProfileScreen = ({ navigation }) => {
-    const existingName = 'Harsh Jaiswal';
-    const existingEmail = 'harshjaiswal@example.com';
-    const existingProfilePicture = require('../assets/pexels-pixabay-220453.jpg');
-    const existingPhoneNo = '9359566941';
+const EditCarScreen = ({ route ,navigation }) => {
 
-    const [name, setName] = useState(existingName);
-    const [email, setEmail] = useState(existingEmail);
-    const [phoneNumber, setPhoneNumber] = useState(existingPhoneNo);
-    const [profilePicture, setProfilePicture] = useState(existingProfilePicture);
+    const { carData } = route.params;
+
+    const [carName, setCarName] = useState(carData.carName);
+    const [carModelName, setCarModelName] = useState(carData.carModel);
+    const [carNo, setCarNo] = useState(carData.carNumber);
+    const [carProfilePicture, setCarProfilePicture] = useState(carData.carImage);
     const [isModalVisible, setIsModalVisible] = useState(false);
     const [message, setMessage] = useState('');
     const [isMessageVisible, setMessageVisible] = useState(false);
@@ -73,7 +71,7 @@ const EditProfileScreen = ({ navigation }) => {
     const handleRemoveProfilePicture = () => {
         // Logic to remove the profile picture
         // This can include resetting the profile picture state variable to a default image or null
-        setProfilePicture(null); // Assuming `null` represents no profile picture
+        setCarProfilePicture(null); // Assuming `null` represents no profile picture
 
         // Set the message and make it visible
         setMessage('Profile picture removed successfully');
@@ -128,40 +126,32 @@ const EditProfileScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.profilePictureContainer}>
-                <Image source={profilePicture} style={styles.profilePicture} />
+                <Image source={carProfilePicture} style={styles.profilePicture} />
                 <TouchableOpacity onPress={handleSelectProfilePicture}>
                     <Image source={cameraIcon} style={styles.cameraIcon} />
                 </TouchableOpacity>
             </View>
-            <View style={styles.profileInfoContainer}>
-                <Text style={styles.nameText}> {existingName}</Text>
-                <Text style={styles.infoText}> {existingEmail}</Text>
-
-            </View>
             <View style={styles.inputContainer}>
-                <Text style={styles.inputLabel}>Name</Text>
                 <TextInput
-                    placeholder="Name"
-                    value={name}
-                    onChangeText={(text) => setName(text)}
+                    placeholder="Enter car name"
+                    value={carName}
+                    onChangeText={(text) => setCarName(text)}
                     style={styles.input}
                 />
             </View>
             <View style={styles.inputContainer}>
-                <Text style={styles.inputLabel}>Email Address</Text>
                 <TextInput
-                    placeholder="Email"
-                    value={email}
-                    onChangeText={(text) => setEmail(text)}
+                    placeholder="Enter car model"
+                    value={carModelName}
+                    onChangeText={(text) => setCarModelName(text)}
                     style={styles.input}
                 />
             </View>
             <View style={styles.inputContainer}>
-                <Text style={styles.inputLabel}>Phone Number</Text>
                 <TextInput
-                    placeholder="Phone Number"
-                    value={phoneNumber}
-                    onChangeText={(text) => setPhoneNumber(text)}
+                    placeholder="Enter car Number "
+                    value={carNo}
+                    onChangeText={(text) => setCarNo(text)}
                     style={styles.input}
                 />
             </View>
@@ -169,7 +159,7 @@ const EditProfileScreen = ({ navigation }) => {
                 style={styles.updateButton}
                 onPress={handleSaveChanges}
             >
-                <Text style={styles.updateButtonText}>Update</Text>
+                <Text style={styles.updateButtonText}>Update Car</Text>
             </TouchableOpacity>
 
             {/* Modal overlay */}
@@ -181,7 +171,7 @@ const EditProfileScreen = ({ navigation }) => {
             >
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>Change profile Photo</Text>
+                        <Text style={styles.modalTitle}>Change car profile Photo</Text>
                         <View style={styles.modalButtonContainer}>
                             <TouchableOpacity style={styles.modalButton} onPress={handleOpenCamera}>
                                 <Image source={cameraIcon} style={styles.modalIcon} />
@@ -287,7 +277,7 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         alignItems: 'center',
         width: '100%',
-        marginTop: 'auto', // Push the button to the bottom
+        marginTop: 40,
         marginBottom: 16,
         shadowColor: 'rgba(0, 0, 0, 0.2)',
         shadowOffset: { width: 1, height: 3 },
@@ -380,4 +370,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default EditProfileScreen;
+export default EditCarScreen;
