@@ -73,7 +73,7 @@ const ProfileScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../assets/logo-no-background.png')}
+          source={require('../assets/pexels-pixabay-220453.jpg')}
           style={styles.profilePicture}
         />
         <View style={styles.userInfo}>
