@@ -62,17 +62,6 @@ const OngoingBookingScreen = () => {
     const [openSwipeableId, setOpenSwipeableId] = useState(null);
 
 
-    // Function to toggle the favorite status
-    const toggleFavorite = (id) => {
-        setFavorites((prevFavorites) => ({
-            ...prevFavorites,
-            [id]: !prevFavorites[id],
-        }));
-        console.log(`Shop ${id} is now ${favorites[id] ? 'unfavorited' : 'favorited'}`);
-    };
-
-    const favoriteImage = require('../assets/icons8-heart-50.png'); // Replace with your heart icon image
-    const nonFavoriteImage = require('../assets/heart-favorite-icon.png'); // Replace with your heart icon image
 
     const handleDeleteFavorite = ({ id }) => {
         // Remove the favorite item with the given id
@@ -132,15 +121,6 @@ const OngoingBookingScreen = () => {
                             style={styles.overlay}
                         >
                             <View style={styles.shopInfoContainer}>
-                                <TouchableOpacity
-                                    onPress={() => toggleFavorite(item.id)}
-                                    style={styles.heartIcon}
-                                >
-                                    <Image
-                                        source={favorites[item.id] ? favoriteImage : nonFavoriteImage}
-                                        style={styles.favoriteImage}
-                                    />
-                                </TouchableOpacity>
                                 <View style={styles.leftContainer}>
                                     <Text style={styles.shopName}>{item.name}</Text>
                                     <View style={styles.iconContainer}>

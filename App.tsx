@@ -14,6 +14,8 @@ import EditCarScreen from './src/screens/EditCar';
 import AddCarScreen from './src/screens/Addcar';
 import FavoriteScreen from './src/screens/Favorite';
 import HomeScreen from "./src/screens/Home";
+import GoHistoryDetailsScreen from "./src/screens/HistoryDetails";
+import GoDetailsScreen from "./src/screens/Details";
 
 const Stack = createStackNavigator();
 
@@ -31,7 +33,7 @@ const ProfileStack = () => {
         <Stack.Screen name="EditCar" component={EditCarScreen} options={{ title: 'Edit car details', headerTitleStyle: { fontWeight: 'bold' } }} />
         <Stack.Screen name="AddCar" component={AddCarScreen} options={{ title: 'Add new car', headerTitleStyle: { fontWeight: 'bold' } }} />
         <Stack.Screen name="Favorite" component={FavoriteScreen} options={{ title: 'Favorite', headerTitleStyle: { fontWeight: 'bold' } }} />
-
+          <Stack.Screen name="GoDetailsScreen" component={GoDetailsScreen} />
       </Stack.Navigator>
   );
 };
@@ -51,10 +53,10 @@ const MainStack = () => {
 
 const App = () => {
   return (
-      <NavigationContainer>
-          <MainStack/>
-      </NavigationContainer>
-
+      // <NavigationContainer>
+      //     <MainStack/>
+      // </NavigationContainer>
+      <GoHistoryDetailsScreen/>
 
   );
 };
