@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button } from "react-native";
+import {View, Text, StyleSheet, Button, TouchableOpacity} from "react-native";
 import { RadioButton } from 'react-native-paper';
 
 
@@ -61,11 +61,13 @@ const LanguageScreen = () => {
       </View>
 
       {/* Add more language options if required */}
-      <Button
-        title="Update"
-        onPress={handleUpdateLanguage}
-        style={styles.updateButton}
-      />
+        <TouchableOpacity
+            style={styles.submitButton}
+            onPress={handleUpdateLanguage}
+        >
+            <Text style={styles.submitButtonText}>Update</Text>
+        </TouchableOpacity>
+
     </View>
   );
 };
@@ -82,7 +84,7 @@ const styles = StyleSheet.create({
   radioContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 22,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#ddd',
@@ -93,19 +95,31 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
-    shadowRadius: 2,},
+    shadowRadius: 2,
+  },
   radioLabel: {
     fontSize: 16,
     marginLeft: 8,
   },
-  updateButton: {
-    marginTop:'auto', // Push the button to the bottom
-    borderRadius: 10, // Add border radius
-    backgroundColor: '#000080', // Navy blue color
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-
-  },
+    submitButton: {
+        backgroundColor: 'navy',
+        borderRadius: 10,
+        paddingVertical: 12,
+        alignItems: 'center',
+        width: '100%',
+        marginTop: 'auto', // Push the button to the bottom
+        marginBottom: 16,
+        shadowColor: 'rgba(0, 0, 0, 0.2)',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 1,
+        shadowRadius: 5,
+        elevation: 2,
+    },
+    submitButtonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
 });
 
 export default LanguageScreen;

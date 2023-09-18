@@ -57,7 +57,7 @@ const shopData = [
     // Add more shop data as needed
 ];
 
-const FavoriteScreen = () => {
+const BookingHistoryScreen = () => {
     const [favorites, setFavorites] = useState({}); // Store favorite status for each shop
     const [openSwipeableId, setOpenSwipeableId] = useState(null);
 
@@ -108,75 +108,73 @@ const FavoriteScreen = () => {
 
         return (
             <TouchableOpacity onPress={() => handleFlatListItemPress(item)}>
-            <Swipeable
-                renderRightActions={rightSwipeActions}
-                overshootRight={false}
-                onSwipeableWillOpen={() => {
-                    if (openSwipeableId !== null) {
-                        // If another swipeable is already open, close it
-                        closeSwipeable();
-                    }
-                    setOpenSwipeableId(item.id);
-                }}
-                onSwipeableWillClose={() => {
-                    if (openSwipeableId === item.id) {
-                        // Only close if the current swipeable is the open one
-                        closeSwipeable();
-                    }
-                }}
-            >
-                <ImageBackground source={item.image} style={styles.shopItem}>
-                    <LinearGradient
-                        colors={['rgba(0, 0, 0, 0.12)', 'rgba(0, 0, 0, 0.3)', 'white']}
-                        start={{ x: 0, y: 0.1 }}
-                        end={{ x: 0, y: 1 }}
-                        locations={[0.4, 0.1, 0.55]}
-                        style={styles.overlay}
-                    >
-                        <View style={styles.shopInfoContainer}>
-                            <TouchableOpacity
-                                onPress={() => toggleFavorite(item.id)}
-                                style={styles.heartIcon}
-                            >
-                                <Image
-                                    source={favorites[item.id] ? favoriteImage : nonFavoriteImage}
-                                    style={styles.favoriteImage}
-                                />
-                            </TouchableOpacity>
-                            <View style={styles.leftContainer}>
-                                <Text style={styles.shopName}>{item.name}</Text>
-                                <View style={styles.iconContainer}>
-                                    <Image source={timingIcon} style={styles.timingIcon} />
-                                    <Text style={styles.shopTiming}>{item.timing}</Text>
-                                </View>
-                                <View style={styles.iconContainer}>
-                                    <Image source={locationIcon} style={styles.locationIcon} />
-                                <Text style={styles.shopDistance}>{item.distance}</Text>
-                                </View>
-                                <Text style={styles.shopAddress} numberOfLines={2} ellipsizeMode="tail">
-                                    {item.address}
-                                </Text>
-
-                            </View>
-                            <View style={styles.rightContainer}>
-                                <View style={styles.ratingContainer}>
-                                    <StarRating
-                                        disabled={true}
-                                        maxStars={5}
-                                        rating={item.rating}
-                                        starSize={18}
-                                        fullStarColor="#FFD700"
+                <Swipeable
+                    renderRightActions={rightSwipeActions}
+                    overshootRight={false}
+                    onSwipeableWillOpen={() => {
+                        if (openSwipeableId !== null) {
+                            closeSwipeable();
+                        }
+                        setOpenSwipeableId(item.id);
+                    }}
+                    onSwipeableWillClose={() => {
+                        if (openSwipeableId === item.id) {
+                            closeSwipeable();
+                        }
+                    }}
+                >
+                    <ImageBackground source={item.image} style={styles.shopItem}>
+                        <LinearGradient
+                            colors={['rgba(0, 0, 0, 0.12)', 'rgba(0, 0, 0, 0.3)', 'white']}
+                            start={{ x: 0, y: 0.1 }}
+                            end={{ x: 0, y: 1 }}
+                            locations={[0.4, 0.1, 0.55]}
+                            style={styles.overlay}
+                        >
+                            <View style={styles.shopInfoContainer}>
+                                <TouchableOpacity
+                                    onPress={() => toggleFavorite(item.id)}
+                                    style={styles.heartIcon}
+                                >
+                                    <Image
+                                        source={favorites[item.id] ? favoriteImage : nonFavoriteImage}
+                                        style={styles.favoriteImage}
                                     />
-                                    <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
-                                </View>
-                                <TouchableOpacity style={styles.directionButton}>
-                                    <Text style={styles.directionButtonText}>Get direction</Text>
                                 </TouchableOpacity>
+                                <View style={styles.leftContainer}>
+                                    <Text style={styles.shopName}>{item.name}</Text>
+                                    <View style={styles.iconContainer}>
+                                        <Image source={timingIcon} style={styles.timingIcon} />
+                                        <Text style={styles.shopTiming}>{item.timing}</Text>
+                                    </View>
+                                    <View style={styles.iconContainer}>
+                                        <Image source={locationIcon} style={styles.locationIcon} />
+                                        <Text style={styles.shopDistance}>{item.distance}</Text>
+                                    </View>
+                                    <Text style={styles.shopAddress} numberOfLines={2} ellipsizeMode="tail">
+                                        {item.address}
+                                    </Text>
+
+                                </View>
+                                <View style={styles.rightContainer}>
+                                    <View style={styles.ratingContainer}>
+                                        <StarRating
+                                            disabled={true}
+                                            maxStars={5}
+                                            rating={item.rating}
+                                            starSize={18}
+                                            fullStarColor="#FFD700"
+                                        />
+                                        <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
+                                    </View>
+                                    <TouchableOpacity style={styles.detailButton}>
+                                        <Text style={styles.detailButtonText}>Go detail</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
-                        </View>
-                    </LinearGradient>
-                </ImageBackground>
-            </Swipeable>
+                        </LinearGradient>
+                    </ImageBackground>
+                </Swipeable>
             </TouchableOpacity>
         );
     };
@@ -267,7 +265,7 @@ const styles = StyleSheet.create({
         color: 'black',
         marginLeft: 4,
     },
-    directionButton: {
+    detailButton: {
         backgroundColor: 'white',
         borderRadius: 10,
         paddingVertical: 8,
@@ -281,7 +279,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3, // Adjusted shadow radius
         elevation: 3,
     },
-    directionButtonText: {
+    detailButtonText: {
         color: 'navy',
         fontWeight: 'bold',
     },
@@ -318,4 +316,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default FavoriteScreen;
+export default BookingHistoryScreen;
