@@ -16,6 +16,7 @@ import FavoriteScreen from './src/screens/Favorite';
 import HomeScreen from "./src/screens/Home";
 import GoHistoryDetailsScreen from "./src/screens/HistoryDetails";
 import GoDetailsScreen from "./src/screens/Details";
+import ReviewScreen from "./src/screens/Reviews";
 
 const Stack = createStackNavigator();
 
@@ -56,7 +57,8 @@ const App = () => {
       // <NavigationContainer>
       //     <MainStack/>
       // </NavigationContainer>
-      <GoHistoryDetailsScreen/>
+      //<GoHistoryDetailsScreen/>
+      <ReviewScreen/>
 
   );
 };
