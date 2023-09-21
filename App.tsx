@@ -17,6 +17,7 @@ import HomeScreen from "./src/screens/Home";
 import GoHistoryDetailsScreen from "./src/screens/HistoryDetails";
 import GoDetailsScreen from "./src/screens/Details";
 import ReviewScreen from "./src/screens/Reviews";
+import NotificationScreen from "./src/screens/Notification";
 
 const Stack = createStackNavigator();
 
@@ -54,12 +55,13 @@ const MainStack = () => {
 
 const App = () => {
   return (
-      // <NavigationContainer>
-      //     <MainStack/>
-      // </NavigationContainer>
-      //<GoHistoryDetailsScreen/>
-      <ReviewScreen/>
-
+      //  <NavigationContainer>
+      //      <ProfileStack/>
+      //  </NavigationContainer>
+      // //<GoHistoryDetailsScreen/>
+      //<ReviewScreen/>
+      //  <ProfileStack/>
+      <NotificationScreen/>
   );
 };
 
