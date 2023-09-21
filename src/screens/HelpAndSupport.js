@@ -56,6 +56,7 @@ const HelpAndSupportScreen = () => {
             style={styles.textArea}
             placeholder="Write message here"
             multiline={true}
+            numberOfLines={7}
         />
 
         <TouchableOpacity
