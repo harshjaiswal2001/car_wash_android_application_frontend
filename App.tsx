@@ -19,6 +19,9 @@ import GoDetailsScreen from "./src/screens/Details";
 import ReviewScreen from "./src/screens/Reviews";
 import NotificationScreen from "./src/screens/Notification";
 import ConfirmationScreen from "./src/screens/Confirmation";
+import BookNow from "./src/screens/BookNow";
+import BookNowScreen from "./src/screens/BookNow";
+import CarouselScreen from "./src/Components/Carousel";
 
 const Stack = createStackNavigator();
 
@@ -63,7 +66,9 @@ const App = () => {
       //<ReviewScreen/>
       //  <ProfileStack/>
      // <NotificationScreen/>
-      <ConfirmationScreen/>
+     // <ConfirmationScreen/>
+     <BookNowScreen/>
+
   );
 };
 
