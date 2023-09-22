@@ -18,6 +18,7 @@ import GoHistoryDetailsScreen from "./src/screens/HistoryDetails";
 import GoDetailsScreen from "./src/screens/Details";
 import ReviewScreen from "./src/screens/Reviews";
 import NotificationScreen from "./src/screens/Notification";
+import ConfirmationScreen from "./src/screens/Confirmation";
 
 const Stack = createStackNavigator();
 
@@ -61,7 +62,8 @@ const App = () => {
       // //<GoHistoryDetailsScreen/>
       //<ReviewScreen/>
       //  <ProfileStack/>
-      <NotificationScreen/>
+     // <NotificationScreen/>
+      <ConfirmationScreen/>
   );
 };
 
