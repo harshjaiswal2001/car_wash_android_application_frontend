@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import cameraIcon from '../assets/icons8-camera-30.png';
+import cameraIcon from '../../../assets/icons8-camera-30.png';
 import Modal from 'react-native-modal';
-import galleryIcon from '../assets/icons8-gallery-48.png';
-import removeIcon from '../assets/icons8-remove-50.png';
-import defaultCarIcon from '../assets/icons8-car-profile-100.png';
+import galleryIcon from '../../../assets/icons8-gallery-48.png';
+import removeIcon from '../../../assets/icons8-remove-50.png';
+import defaultCarIcon from '../../../assets/icons8-car-profile-100.png';
 
 const AddNewCarScreen = ({ navigation }) => {
     // State variables

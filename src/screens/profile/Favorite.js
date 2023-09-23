@@ -3,9 +3,9 @@ import { View, FlatList, ImageBackground, Text, StyleSheet, TouchableOpacity, Im
 import StarRating from 'react-native-star-rating';
 import LinearGradient from 'react-native-linear-gradient';
 import { Swipeable } from 'react-native-gesture-handler';
-import deleteIcon from "../assets/icons8-remove-50.png";
-import timingIcon from "../assets/icons8-clock-24.png";
-import locationIcon from "../assets/icons8-location-50.png"
+import deleteIcon from "../../../assets/icons8-remove-50.png";
+import timingIcon from "../../../assets/icons8-clock-24.png";
+import locationIcon from "../../../assets/icons8-location-50.png"
 
 // Sample shop data
 const shopData = [
@@ -16,7 +16,7 @@ const shopData = [
         distance: '1.2 miles away',
         address: '123 Main St, City, Country',
         rating: 4.5,
-        image: require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '2',
@@ -25,7 +25,7 @@ const shopData = [
         distance: '2.5 miles away',
         address: '456 Elm St, City, Country',
         rating: 4.2,
-        image: require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '3',
@@ -34,7 +34,7 @@ const shopData = [
         distance: '0.8 miles away',
         address: '789 Oak St, City, Country 789 Oak St, City, Country',
         rating: 3.8,
-        image: require('../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
+        image: require('../../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
     },
     {
         id: '4',
@@ -43,7 +43,7 @@ const shopData = [
         distance: '3.8 miles away',
         address: '101 Pine St, City, Country',
         rating: 4.7,
-        image: require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '5',
@@ -52,16 +52,27 @@ const shopData = [
         distance: '1.0 miles away',
         address: '246 Maple St, City, Country ',
         rating: 4.0,
-        image: require('../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
+        image: require('../../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
     },
     // Add more shop data as needed
 ];
 
-const OngoingBookingScreen = () => {
+const FavoriteScreen = () => {
     const [favorites, setFavorites] = useState({}); // Store favorite status for each shop
     const [openSwipeableId, setOpenSwipeableId] = useState(null);
 
 
+    // Function to toggle the favorite status
+    const toggleFavorite = (id) => {
+        setFavorites((prevFavorites) => ({
+            ...prevFavorites,
+            [id]: !prevFavorites[id],
+        }));
+        console.log(`Shop ${id} is now ${favorites[id] ? 'unfavorited' : 'favorited'}`);
+    };
+
+    const favoriteImage = require('../../../assets/icons8-heart-50.png'); // Replace with your heart icon image
+    const nonFavoriteImage = require('../../../assets/heart-favorite-icon.png'); // Replace with your heart icon image
 
     const handleDeleteFavorite = ({ id }) => {
         // Remove the favorite item with the given id
@@ -97,64 +108,73 @@ const OngoingBookingScreen = () => {
 
         return (
             <TouchableOpacity onPress={() => handleFlatListItemPress(item)}>
-                <Swipeable
-                    renderRightActions={rightSwipeActions}
-                    overshootRight={false}
-                    onSwipeableWillOpen={() => {
-                        if (openSwipeableId !== null) {
-                            closeSwipeable();
-                        }
-                        setOpenSwipeableId(item.id);
-                    }}
-                    onSwipeableWillClose={() => {
-                        if (openSwipeableId === item.id) {
-                            closeSwipeable();
-                        }
-                    }}
-                >
-                    <ImageBackground source={item.image} style={styles.shopItem}>
-                        <LinearGradient
-                            colors={['rgba(0, 0, 0, 0.12)', 'rgba(0, 0, 0, 0.3)', 'white']}
-                            start={{ x: 0, y: 0.1 }}
-                            end={{ x: 0, y: 1 }}
-                            locations={[0.4, 0.1, 0.55]}
-                            style={styles.overlay}
-                        >
-                            <View style={styles.shopInfoContainer}>
-                                <View style={styles.leftContainer}>
-                                    <Text style={styles.shopName}>{item.name}</Text>
-                                    <View style={styles.iconContainer}>
-                                        <Image source={timingIcon} style={styles.timingIcon} />
-                                        <Text style={styles.shopTiming}>{item.timing}</Text>
-                                    </View>
-                                    <View style={styles.iconContainer}>
-                                        <Image source={locationIcon} style={styles.locationIcon} />
-                                        <Text style={styles.shopDistance}>{item.distance}</Text>
-                                    </View>
-                                    <Text style={styles.shopAddress} numberOfLines={2} ellipsizeMode="tail">
-                                        {item.address}
-                                    </Text>
+            <Swipeable
+                renderRightActions={rightSwipeActions}
+                overshootRight={false}
+                onSwipeableWillOpen={() => {
+                    if (openSwipeableId !== null) {
+                        closeSwipeable();
+                    }
+                    setOpenSwipeableId(item.id);
+                }}
+                onSwipeableWillClose={() => {
+                    if (openSwipeableId === item.id) {
+                        closeSwipeable();
+                    }
+                }}
+            >
+                <ImageBackground source={item.image} style={styles.shopItem}>
+                    <LinearGradient
+                        colors={['rgba(0, 0, 0, 0.12)', 'rgba(0, 0, 0, 0.3)', 'white']}
+                        start={{ x: 0, y: 0.1 }}
+                        end={{ x: 0, y: 1 }}
+                        locations={[0.4, 0.1, 0.55]}
+                        style={styles.overlay}
+                    >
+                        <View style={styles.shopInfoContainer}>
+                            <TouchableOpacity
+                                onPress={() => toggleFavorite(item.id)}
+                                style={styles.heartIcon}
+                            >
+                                <Image
+                                    source={favorites[item.id] ? favoriteImage : nonFavoriteImage}
+                                    style={styles.favoriteImage}
+                                />
+                            </TouchableOpacity>
+                            <View style={styles.leftContainer}>
+                                <Text style={styles.shopName}>{item.name}</Text>
+                                <View style={styles.iconContainer}>
+                                    <Image source={timingIcon} style={styles.timingIcon} />
+                                    <Text style={styles.shopTiming}>{item.timing}</Text>
+                                </View>
+                                <View style={styles.iconContainer}>
+                                    <Image source={locationIcon} style={styles.locationIcon} />
+                                <Text style={styles.shopDistance}>{item.distance}</Text>
+                                </View>
+                                <Text style={styles.shopAddress} numberOfLines={2} ellipsizeMode="tail">
+                                    {item.address}
+                                </Text>
 
-                                </View>
-                                <View style={styles.rightContainer}>
-                                    <View style={styles.ratingContainer}>
-                                        <StarRating
-                                            disabled={true}
-                                            maxStars={5}
-                                            rating={item.rating}
-                                            starSize={18}
-                                            fullStarColor="#FFD700"
-                                        />
-                                        <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
-                                    </View>
-                                    <TouchableOpacity style={styles.detailButton}>
-                                        <Text style={styles.detailButtonText}>Go detail</Text>
-                                    </TouchableOpacity>
-                                </View>
                             </View>
-                        </LinearGradient>
-                    </ImageBackground>
-                </Swipeable>
+                            <View style={styles.rightContainer}>
+                                <View style={styles.ratingContainer}>
+                                    <StarRating
+                                        disabled={true}
+                                        maxStars={5}
+                                        rating={item.rating}
+                                        starSize={18}
+                                        fullStarColor="#FFD700"
+                                    />
+                                    <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
+                                </View>
+                                <TouchableOpacity style={styles.directionButton}>
+                                    <Text style={styles.directionButtonText}>Get direction</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </LinearGradient>
+                </ImageBackground>
+            </Swipeable>
             </TouchableOpacity>
         );
     };
@@ -245,7 +265,7 @@ const styles = StyleSheet.create({
         color: 'black',
         marginLeft: 4,
     },
-    detailButton: {
+    directionButton: {
         backgroundColor: 'white',
         borderRadius: 10,
         paddingVertical: 8,
@@ -259,7 +279,7 @@ const styles = StyleSheet.create({
         shadowRadius: 3, // Adjusted shadow radius
         elevation: 3,
     },
-    detailButtonText: {
+    directionButtonText: {
         color: 'navy',
         fontWeight: 'bold',
     },
@@ -296,4 +316,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default OngoingBookingScreen;
+export default FavoriteScreen;

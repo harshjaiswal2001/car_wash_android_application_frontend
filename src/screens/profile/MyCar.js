@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Swipeable } from 'react-native-gesture-handler';
-import binIcon from '../assets/icons8-remove-50.png'; // Import your delete icon image
-import editIcon from '../assets/edit-button.png';
+import binIcon from '../../../assets/icons8-remove-50.png'; // Import your delete icon image
+import editIcon from '../../../assets/edit-button.png';
 
 const carData = [
     {
@@ -11,14 +11,14 @@ const carData = [
         carName: 'Mercedes-Benz',
         carModel: 'AMG A35',
         carNumber: 'MH01FG0001',
-        carImage: require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        carImage: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '2',
         carName: 'BMW',
         carModel: 'M3 Sedan',
         carNumber: 'MH31FC0001',
-        carImage: require('../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
+        carImage: require('../../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
     },
     // Add more car data as needed
 ];

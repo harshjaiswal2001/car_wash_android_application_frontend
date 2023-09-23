@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity, Linking, FlatList, Modal, TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {pixelNormalize} from "../../constants/Size";
 
 
 
@@ -61,7 +62,7 @@ const GoHistoryDetailsScreen = () => {
             <View style={styles.detailContainer}>
                 <View style={styles.shopImageContainer}>
                     <Image
-                        source={require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
+                        source={require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
                         style={styles.shopImage}
                     />
                 </View>
@@ -151,7 +152,7 @@ const GoHistoryDetailsScreen = () => {
                     <View style={styles.modalContent}>
                         <Text style={styles.modalHeaderText}>How was the experience?</Text>
                         <Image
-                            source={require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
+                            source={require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
                             style={styles.modalImage}
                         />
 
@@ -207,227 +208,227 @@ const styles = StyleSheet.create({
     },
     detailContainer: {
         flexDirection: 'row',
-        margin: 20,
-        borderRadius: 10,
-        padding: 6,
+        margin:pixelNormalize(20),
+        borderRadius: pixelNormalize(10),
+        padding: pixelNormalize(6),
         backgroundColor: 'white',
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(1), height:pixelNormalize( 3) },
+        shadowOpacity:pixelNormalize(0.2),
+        shadowRadius:pixelNormalize(2),
+        elevation: pixelNormalize(3),
         position: 'relative',
     },
     shopImageContainer: {
-        borderRadius: 10,
-        padding: 8,
+        borderRadius: pixelNormalize(10),
+        padding: pixelNormalize(8),
         overflow: 'hidden',
-        marginLeft: -4,
-        marginRight: -10,
+        marginLeft: pixelNormalize(-4),
+        marginRight:pixelNormalize(-10),
     },
     shopImage: {
-        width: 110,
-        height: 100,
-        borderRadius: 10,
+        width:pixelNormalize(110),
+        height:pixelNormalize(100),
+        borderRadius: pixelNormalize(10),
     },
     starContainer: {
-        marginHorizontal: 5,  // Adjust this value to increase/decrease space between stars
+        marginHorizontal:pixelNormalize(5),
     },
 
     shopDetailsContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        padding: 10,
-        borderRadius: 20,
+        padding:pixelNormalize(10),
+        borderRadius:pixelNormalize(20),
     },
     shopName: {
-        fontSize: 18,
+        fontSize:pixelNormalize(18),
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom:pixelNormalize(5),
         color: 'black',
     },
     shopInfoRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 3,
+        marginBottom:pixelNormalize(3),
     },
     infoIcon: {
-        marginRight: 5,
+        marginRight:pixelNormalize(5),
     },
     shopInfo: {
-        fontSize: 13,
+        fontSize:pixelNormalize(13),
         color: 'black',
     },
     shopAddress: {
-        fontSize: 12,
+        fontSize:pixelNormalize(12),
         color: 'grey',
     },
     callButton: {
         position: 'absolute',
-        bottom: 40,
-        right: 12,
-        width: 45,
-        height: 45,
-        borderRadius: 23,
+        bottom:pixelNormalize(40),
+        right:pixelNormalize(12),
+        width:pixelNormalize(45),
+        height:pixelNormalize(45),
+        borderRadius:pixelNormalize(23),
         backgroundColor: '#D3D3D3',
         justifyContent: 'center',
         alignItems: 'center',
     },
     secondContainer: {
-        marginTop: 10,
-        marginLeft:20,
+        marginTop:pixelNormalize(10),
+        marginLeft:pixelNormalize(20),
     },
     label: {
-        fontSize: 19,
+        fontSize:pixelNormalize(19),
         color: 'black',
-        marginBottom: 6,
-        letterSpacing:0.2,
+        marginBottom:pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.2),
     },
     dateValue: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'gray',
-        marginBottom: 6,
-        letterSpacing:0.4,
+        marginBottom: pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.4),
         justifyContent:"space-evenly"
     },
 
     timeValue: {
-        fontSize: 16,
+        fontSize:pixelNormalize(16),
         color: 'gray',
-        marginBottom: 20,
-        letterSpacing:0.4,
+        marginBottom:pixelNormalize(20),
+        letterSpacing:pixelNormalize(0.4),
     },
     bottomBorder: {
         borderBottomColor: 'grey',
-        borderBottomWidth: 0.6,
-        marginTop:20,
+        borderBottomWidth:pixelNormalize(0.6),
+        marginTop:pixelNormalize(20),
 
     },
     thirdContainer: {
-        marginTop: 20,
-        marginLeft:20,
+        marginTop:pixelNormalize(20),
+        marginLeft:pixelNormalize(20),
         flexDirection:'row',
     },
     value: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'gray',
-        marginBottom: 6,
-        letterSpacing:0.4,
-        padding:3,
-        left:180,
+        marginBottom: pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.4),
+        padding:pixelNormalize(3),
+        left:pixelNormalize(180),
     },
     serviceItem: {
         flexDirection: 'row',
         justifyContent:'flex-end',
         alignItems: 'center',
-        marginBottom: 4,
-        marginLeft:135,
+        marginBottom:pixelNormalize(4),
+        marginLeft:pixelNormalize(135),
     },
     serviceText: {
-        fontSize: 16,
-        letterSpacing: 0.4,
+        fontSize:pixelNormalize(16),
+        letterSpacing:pixelNormalize(0.4),
         color: 'grey',
 
     },
     priceText: {
-        fontSize: 16,
-        letterSpacing: 0.4,
+        fontSize:pixelNormalize(16),
+        letterSpacing: pixelNormalize(0.4),
         color: 'grey',
         fontWeight: 'bold',
-        marginRight:10
+        marginRight:pixelNormalize(10)
     },
     amount:{
-        fontSize:19,
+        fontSize:pixelNormalize(19),
         color:"darkblue",
-        letterSpacing:0.3,
-        padding:4,
+        letterSpacing:pixelNormalize(0.3),
+        padding:pixelNormalize(4),
         fontWeight: 'bold',
         marginLeft:"auto",
-        marginRight:10,
+        marginRight:pixelNormalize(10),
 
     },
     discountAmount: {
-        fontSize: 19,
+        fontSize: pixelNormalize(19),
         color: "darkblue",
-        letterSpacing: 0.3,
-        padding: 4,
+        letterSpacing: pixelNormalize(0.3),
+        padding:pixelNormalize(4),
         fontWeight: 'bold',
         marginLeft:'auto',
-        marginRight:10,
+        marginRight:pixelNormalize(10),
     },
 
     ratingButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
+        borderRadius:pixelNormalize(10),
+        paddingVertical:pixelNormalize(12),
         alignItems: 'center',
         width: '100%',
         marginTop: 'auto',
-        marginBottom: 20,
+        marginBottom:pixelNormalize(20),
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 2,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize(2) },
+        shadowOpacity:pixelNormalize(1),
+        shadowRadius:pixelNormalize(5),
+        elevation: pixelNormalize(2),
     },
     ratingButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
     modalContainer: {
         flex: 1,
         justifyContent: 'flex-end',
-        borderRadius:20,
+        borderRadius:pixelNormalize(20),
     },
     modalContent: {
         backgroundColor: 'white',
-        padding: 20,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        borderRadius:20,
+        padding:pixelNormalize(20),
+        borderTopLeftRadius:pixelNormalize(20),
+        borderTopRightRadius:pixelNormalize(20),
+        borderRadius:pixelNormalize(20),
         alignItems:'center',
         justifyContent:'center'
     },
     modalHeaderText: {
-        fontSize: 22,
-        marginBottom: 10,
+        fontSize:pixelNormalize(22),
+        marginBottom:pixelNormalize(10),
         color:'black',
         fontWeight:'bold',
     },
     modalTextFirst: {
-        fontSize: 24,
+        fontSize:pixelNormalize(24),
         color:'black',
         fontWeight:'bold'
     },
 
     modalText: {
-        fontSize: 18,
-        marginBottom: 5,
+        fontSize:pixelNormalize(18),
+        marginBottom:pixelNormalize(5),
         fontWeight:'bold',
     },
 
     ratingContainer:{
         flexDirection:'row',
-        marginBottom:12,
-        marginTop:5,
+        marginBottom:pixelNormalize(12),
+        marginTop:pixelNormalize(5),
 
     },
 
     modalInput: {
 
         borderColor: 'gray',
-        borderRadius: 10,
-        padding: 10,
-        marginBottom: 30,
+        borderRadius:pixelNormalize(10),
+        padding:pixelNormalize(10),
+        marginBottom:pixelNormalize(30),
         width: '100%',
         backgroundColor:'#F0F0F0',
         shadowColor: '#000',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        shadowOffset: { width:pixelNormalize(1), height:pixelNormalize(3) },
+        shadowOpacity: pixelNormalize(0.2),
+        shadowRadius: pixelNormalize(2),
+        elevation: pixelNormalize(3),
         textAlign:'left',
         textAlignVertical:'top'
 
@@ -439,27 +440,27 @@ const styles = StyleSheet.create({
     modalButton: {
         flex: 1,
         alignItems: 'center',
-        padding: 15,
-        borderRadius: 10,
+        padding:pixelNormalize(15),
+        borderRadius:pixelNormalize(10),
     },
     submitButton: {
         backgroundColor: 'navy',
-        marginRight: 10,
+        marginRight: pixelNormalize(10),
     },
     skipButton: {
         backgroundColor: 'lightgray',
-        marginLeft: 10,
+        marginLeft:pixelNormalize(10),
     },
     buttonText: {
         color: 'white',
         fontWeight: 'bold',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
     },
 
     modalImage: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
+        width:pixelNormalize(80),
+        height: pixelNormalize(80),
+        borderRadius: pixelNormalize(40),
         resizeMode:'cover',
     },
 

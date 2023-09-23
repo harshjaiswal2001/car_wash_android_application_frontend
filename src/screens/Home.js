@@ -1,62 +1,78 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import {View, Text, StyleSheet, Pressable, ScrollView, Button,} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import Carousel from '../components/Slider';
+import ServiceStatus from '../components/ServiceStatus';
+import Recommendation from '../components/Recommendation';
 
-const HomeScreen = ({ navigation }) => {
-    return (
-        <View style={styles.container}>
-            <Text style={styles.heading}>Welcome to Car Wash App</Text>
+const HomeScreen = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.innerContainer}>
+        {/* Bell Icon Button */}
+        <Pressable
+          style={styles.bellButton}
+          onPress={() => {
+            // Handle button press here
+            console.log('Bell button pressed');
+          }}>
+          <Icon name="md-notifications-outline" size={24} color="black" />
+        </Pressable>
 
-            {/* Booking Button */}
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('Booking')}
-            >
-                <Text style={styles.buttonText}>Book an Appointment</Text>
-            </TouchableOpacity>
+        {/* SUPER SHINE Text */}
+        <Text style={styles.superShineText}>SUPER SHINE</Text>
 
-            {/* Discover Button */}
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('Discover')}
-            >
-                <Text style={styles.buttonText}>Discover Car Wash Locations</Text>
-            </TouchableOpacity>
+        {/* Add your content below */}
+        <Text style={styles.text2}>Address will be here</Text>
+      </View>
+      <ScrollView>
+        <Carousel />
+        <Text style={styles.serviceStatusText}>Service status</Text>
 
-            {/* Profile Button */}
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => navigation.navigate('Profile')}
-            >
-                <Text style={styles.buttonText}>View Profile</Text>
-            </TouchableOpacity>
-        </View>
-    );
+        <ServiceStatus />
+        <Recommendation />
+      </ScrollView>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 16,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    heading: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 24,
-    },
-    button: {
-        backgroundColor: 'navy',
-        borderRadius: 8,
-        padding: 16,
-        width: '80%',
-        marginBottom: 16,
-        alignItems: 'center',
-    },
-    buttonText: {
-        fontSize: 18,
-        color: 'white',
-    },
+  container: {
+    flex: 1,
+    paddingHorizontal: 5,
+  },
+  innerContainer: {
+    flex: 1,
+  },
+  bellButton: {
+    position: 'absolute',
+    top: 13,
+    right: 20,
+    zIndex: 1,
+  },
+  superShineText: {
+    fontSize: 44,
+    fontWeight: 'bold',
+    color: 'red',
+  },
+  text2: {
+    color: 'red',
+  },
+  serviceStatusText: {
+    fontSize: 19,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  nearbyServiceCentresContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+  nearbyServiceCentresText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });
 
 export default HomeScreen;

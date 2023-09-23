@@ -6,7 +6,7 @@ const TermsAndConditionsScreen = () => {
     <ScrollView>
     <View style={styles.container}>
       <Image
-        source={require('../assets/logo-no-background.png')} // Replace with your logo source
+        source={require('../../../assets/logo-no-background.png')} // Replace with your logo source
         style={styles.logo}
         alt={'carwash supershine logo'}
         resizeMode='stretch'

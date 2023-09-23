@@ -3,8 +3,8 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity ,Image} from "react
 import { useNavigation } from '@react-navigation/native';
 
 // Import your call and mail icons as images
-import callIcon from '../assets/icons8-call-50.png';
-import mailIcon from '../assets/icons8-mail-50.png';
+import callIcon from '../../../assets/icons8-call-50.png';
+import mailIcon from '../../../assets/icons8-mail-50.png';
 
 
 

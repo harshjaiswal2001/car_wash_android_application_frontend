@@ -1,6 +1,7 @@
 import React ,{useState} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity, Linking, FlatList, Modal} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {pixelNormalize} from "../../constants/Size";
 
 
 
@@ -47,7 +48,7 @@ const GoDetailsScreen = () => {
             <View style={styles.detailContainer}>
                 <View style={styles.shopImageContainer}>
                     <Image
-                        source={require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
+                        source={require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
                         style={styles.shopImage}
                     />
                 </View>
@@ -90,20 +91,20 @@ const GoDetailsScreen = () => {
             <View style={styles.bottomBorder} />
 
             <View style={styles.thirdContainer}>
-                <Text style={styles.label}>Services</Text>
-                <FlatList
-                    data={servicesData}
-                    keyExtractor={(item, index) => index.toString()}
-                    renderItem={({ item }) => <ServiceListItem service={item.service} price={item.price} />}
-                />
-            </View>
-            <View style={styles.bottomBorder} />
-            <View style={styles.thirdContainer}>
+            <Text style={styles.label}>Services</Text>
+            <FlatList
+                data={servicesData}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({ item }) => <ServiceListItem service={item.service} price={item.price} />}
+            />
+        </View>
+    <View style={styles.bottomBorder} />
+    <View style={styles.thirdContainer}>
 
-                <Text style={styles.label}>Service charge </Text>
-                <Text style={styles.amount}>$350</Text>
+        <Text style={styles.label}>Service charge </Text>
+        <Text style={styles.amount}>$350</Text>
 
-            </View>
+    </View>
 
             <View style={styles.thirdContainer}>
 
@@ -136,18 +137,18 @@ const GoDetailsScreen = () => {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
                         <Image
-                            source={require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
+                            source={require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
                             style={styles.modalImage}
                         />
                         <Text style={styles.modalText}>Are you sure you want to cancel this booking?</Text>
                         <View style={styles.buttonContainer}>
-                            <TouchableOpacity onPress={handleCancel} style={styles.modalButton}>
-                                <Text style={styles.modalButtonText}>Yes</Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity onPress={handleCancelNo} style={styles.modalButton}>
-                                <Text style={styles.modalButtonText}>No</Text>
-                            </TouchableOpacity>
-                        </View>
+                        <TouchableOpacity onPress={handleCancel} style={styles.modalButton}>
+                            <Text style={styles.modalButtonText}>Yes</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={handleCancelNo} style={styles.modalButton}>
+                            <Text style={styles.modalButtonText}>No</Text>
+                        </TouchableOpacity>
+                    </View>
                     </View>
                 </View>
             </Modal>
@@ -164,169 +165,169 @@ const styles = StyleSheet.create({
     },
     detailContainer: {
         flexDirection: 'row',
-        margin: 20,
-        borderRadius: 10,
-        padding: 6,
+        margin: pixelNormalize(20),
+        borderRadius: pixelNormalize(10),
+        padding:pixelNormalize(6),
         backgroundColor: 'white',
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        shadowOffset: { width:pixelNormalize(1), height:pixelNormalize(3)  },
+        shadowOpacity: pixelNormalize(0.2),
+        shadowRadius:pixelNormalize(2),
+        elevation:pixelNormalize(3),
         position: 'relative',
     },
     shopImageContainer: {
-        borderRadius: 10,
-        padding: 8,
+        borderRadius:pixelNormalize(10),
+        padding:pixelNormalize(8),
         overflow: 'hidden',
-        marginLeft: -4,
-        marginRight: -10,
+        marginLeft:pixelNormalize(-4),
+        marginRight: pixelNormalize(-10),
     },
     shopImage: {
-        width: 110,
-        height: 100,
-        borderRadius: 10,
+        width:pixelNormalize(110),
+        height:pixelNormalize(100),
+        borderRadius:pixelNormalize(10),
     },
     shopDetailsContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        padding: 10,
-        borderRadius: 20,
+        padding:pixelNormalize(10),
+        borderRadius:pixelNormalize(20),
     },
     shopName: {
-        fontSize: 18,
+        fontSize:pixelNormalize(18),
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom:pixelNormalize(5),
         color: 'black',
     },
     shopInfoRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 3,
+        marginBottom:pixelNormalize(3),
     },
     infoIcon: {
-        marginRight: 5,
+        marginRight: pixelNormalize(5),
     },
     shopInfo: {
-        fontSize: 13,
+        fontSize:pixelNormalize(13),
         color: 'black',
     },
     shopAddress: {
-        fontSize: 12,
+        fontSize:pixelNormalize(12),
         color: 'grey',
     },
     callButton: {
         position: 'absolute',
-        bottom: 40,
-        right: 12,
-        width: 45,
-        height: 45,
-        borderRadius: 23,
+        bottom:pixelNormalize(40),
+        right:pixelNormalize(12),
+        width:pixelNormalize(45),
+        height: pixelNormalize(45),
+        borderRadius:pixelNormalize(23),
         backgroundColor: '#D3D3D3',
         justifyContent: 'center',
         alignItems: 'center',
     },
     secondContainer: {
-        marginTop: 10,
-        marginLeft:20,
+        marginTop: pixelNormalize(10),
+        marginLeft:pixelNormalize(20),
     },
     label: {
-        fontSize: 19,
+        fontSize: pixelNormalize(19),
         color: 'black',
-        marginBottom: 6,
-        letterSpacing:0.2,
+        marginBottom: pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.2),
     },
     dateValue: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'gray',
-        marginBottom: 6,
-        letterSpacing:0.4,
+        marginBottom: pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.4),
         justifyContent:"space-evenly"
     },
 
     timeValue: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'gray',
-        marginBottom: 20,
-        letterSpacing:0.4,
+        marginBottom: pixelNormalize(20),
+        letterSpacing:pixelNormalize(0.4),
     },
     bottomBorder: {
         borderBottomColor: 'grey',
-        borderBottomWidth: 0.6,
-        marginTop:20,
+        borderBottomWidth:pixelNormalize( 0.6),
+        marginTop:pixelNormalize(20),
 
     },
     thirdContainer: {
-        marginTop: 20,
-        marginLeft:20,
+        marginTop: pixelNormalize(20),
+        marginLeft:pixelNormalize(20),
         flexDirection:'row',
     },
     value: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'gray',
-        marginBottom: 6,
-        letterSpacing:0.4,
-        padding:3,
-        left:180,
+        marginBottom: pixelNormalize(6),
+        letterSpacing:pixelNormalize(0.4),
+        padding:pixelNormalize(3),
+        left:pixelNormalize(180),
     },
     serviceItem: {
         flexDirection: 'row',
         justifyContent:'flex-end',
         alignItems: 'center',
-        marginBottom: 4,
-        marginLeft:135,
+        marginBottom: pixelNormalize(4),
+        marginLeft:pixelNormalize(135),
     },
     serviceText: {
-        fontSize: 16,
-        letterSpacing: 0.4,
+        fontSize: pixelNormalize(16),
+        letterSpacing: pixelNormalize(0.4),
         color: 'grey',
 
     },
     priceText: {
-        fontSize: 16,
-        letterSpacing: 0.4,
+        fontSize: pixelNormalize(16),
+        letterSpacing:pixelNormalize(0.4),
         color: 'grey',
         fontWeight: 'bold',
-        marginRight:10
+        marginRight:pixelNormalize(10)
     },
     amount:{
-        fontSize:19,
+        fontSize:pixelNormalize(19),
         color:"darkblue",
-        letterSpacing:0.3,
-        padding:4,
+        letterSpacing:pixelNormalize(0.3),
+        padding:pixelNormalize(4),
         fontWeight: 'bold',
         marginLeft:"auto",
-        marginRight:10,
+        marginRight:pixelNormalize(10),
 
     },
     discountAmount: {
-        fontSize: 19,
+        fontSize:pixelNormalize(19),
         color: "darkblue",
-        letterSpacing: 0.3,
-        padding: 4,
+        letterSpacing:pixelNormalize(0.3),
+        padding:pixelNormalize(4),
         fontWeight: 'bold',
         marginLeft:'auto',
-        marginRight:10,
+        marginRight:pixelNormalize(10),
     },
 
     cancelButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
+        borderRadius: pixelNormalize(10),
+        paddingVertical:pixelNormalize(12),
         alignItems: 'center',
         width: '100%',
         marginTop: 'auto',
-        marginBottom: 20,
+        marginBottom: pixelNormalize(20),
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 2,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(2),
     },
     cancelButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize:pixelNormalize(18),
         fontWeight: 'bold',
     },
 
@@ -338,17 +339,17 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: '#F0F0F0',
-        padding: 10,
-        borderRadius: 10,
+        padding: pixelNormalize(10),
+        borderRadius: pixelNormalize(10),
         alignItems: 'center',
-        margin:50
+        margin:pixelNormalize(50)
     },
     modalText: {
-        fontSize: 18,
-        marginBottom: 20,
+        fontSize:pixelNormalize(18),
+        marginBottom: pixelNormalize(20),
         textAlign: 'center',
         color:'black',
-        margin:20
+        margin:pixelNormalize(20),
     },
     buttonContainer: {
         flexDirection: 'row',
@@ -356,23 +357,23 @@ const styles = StyleSheet.create({
     },
     modalButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
-        paddingHorizontal: 20,
+        borderRadius: pixelNormalize(10),
+        paddingVertical:pixelNormalize(12),
+        paddingHorizontal: pixelNormalize(20),
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: pixelNormalize(10),
         width:'50%',
         margin:1,
     },
     modalButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
     modalImage: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
+        width: pixelNormalize(80),
+        height: pixelNormalize(80),
+        borderRadius: pixelNormalize(40),
         resizeMode:'cover',
     },
 

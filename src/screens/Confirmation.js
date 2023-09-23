@@ -109,7 +109,7 @@ const ConfirmationScreen = () => {
             <View style={styles.detailContainer}>
                 <View style={styles.shopImageContainer}>
                     <Image
-                        source={require('../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
+                        source={require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg')}
                         style={styles.shopImage}
                     />
                 </View>

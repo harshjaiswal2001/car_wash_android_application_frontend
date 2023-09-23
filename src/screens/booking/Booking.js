@@ -20,11 +20,13 @@ const BookingScreen = () => {
                     fontWeight: 'bold',
                     fontSize: 18,
                 },
-                activeTintColor: 'navy',
+                activeTintColor: '#1F5170',
                 inactiveTintColor: 'gray',
                     indicatorStyle: {
-                        backgroundColor: 'navy',
+                        backgroundColor: '#1F5170',
                     },
+                style: { backgroundColor: '#efefef' },
+
             }}
         >
             <Tab.Screen

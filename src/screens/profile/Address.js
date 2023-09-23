@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
 import { Swipeable } from 'react-native-gesture-handler';
-import editImage from '../assets/edit-button.png';
-import deleteIcon from '../assets/icons8-remove-50.png'; // Import your delete icon image
+import editImage from '../../../assets/edit-button.png';
+import deleteIcon from '../../../assets/icons8-remove-50.png'; // Import your delete icon image
 
 // Icon imports
-import homeIcon from '../assets/icons8-home-24.png';
-import officeIcon from '../assets/icons8-office-location-66.png';
-import otherIcon from '../assets/icons8-globe-24.png';
-import additionalIcon from '../assets/icons8-location-50.png';
+import homeIcon from '../../../assets/icons8-home-24.png';
+import officeIcon from '../../../assets/icons8-office-location-66.png';
+import otherIcon from '../../../assets/icons8-globe-24.png';
+import additionalIcon from '../../../assets/icons8-location-50.png';
+import {pixelNormalize} from "../../constants/Size";
 
 const AddressScreen = ({ navigation }) => {
     const [addresses, setAddresses] = useState([
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     addressItem: {
         backgroundColor: 'white',
         borderRadius: 10,
-        padding: 16,
+        padding: pixelNormalize(16),
         marginBottom: 16,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },

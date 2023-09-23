@@ -1,57 +1,49 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'
+import MapView from "react-native-maps";
+import HorizontalImageFlatList from "../components/Recommendation2";
 
-// Sample data for car wash locations
-const carWashLocations = [
-    {
-        id: '1',
-        name: 'Clean & Shine Car Wash',
-        address: '123 Main St, City, Country',
-        distance: '1.2 miles away',
-    },
-    {
-        id: '2',
-        name: 'Sparkling Car Wash',
-        address: '456 Elm St, City, Country',
-        distance: '2.5 miles away',
-    },
-    {
-        id: '3',
-        name: 'Cityscape Auto Spa',
-        address: '789 Oak St, City, Country',
-        distance: '0.8 miles away',
-    },
-    // Add more car wash locations as needed
-];
-
-const DiscoverScreen = ({ navigation }) => {
-    // Function to handle when a location is clicked
-    const handleLocationPress = (locationId) => {
-        // You can navigate to a details screen for the selected location
-        // Example: navigation.navigate('LocationDetails', { locationId });
-        console.log(`Location with ID ${locationId} clicked.`);
-    };
-
-    // Render each car wash location as a list item
-    const renderItem = ({ item }) => (
-        <TouchableOpacity
-            style={styles.locationItem}
-            onPress={() => handleLocationPress(item.id)}
-        >
-            <Text style={styles.locationName}>{item.name}</Text>
-            <Text style={styles.locationAddress}>{item.address}</Text>
-            <Text style={styles.locationDistance}>{item.distance}</Text>
-        </TouchableOpacity>
-    );
-
+const DiscoverScreen = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.heading}>Discover Car Wash Locations</Text>
-            <FlatList
-                data={carWashLocations}
-                keyExtractor={(item) => item.id}
-                renderItem={renderItem}
+            {/* Search bar */}
+            <View style={styles.searchBarContainer}>
+                <TextInput
+                    style={styles.searchBar}
+                    placeholder="Search"
+                    placeholderTextColor="gray"
+                    onChangeText={(text) => {
+                        // Handle text input here
+                    }}
+                />
+            </View>
+
+
+            <Icon
+                name='arrow-back'// Ionicons name for left arrow
+                size={32} // Adjust the size as needed
+                color="black" // Adjust the color as needed
+                style={styles.button}
+                onPress={() => {
+                    // Handle the button press action here
+                }}
             />
+
+            {/* Your map component goes here */}
+            <View style={{ flex: 1 }}>
+                <MapView
+                    style={{ width: '100%', height: '100%' }}
+                    initialRegion={{
+                        latitude: 28.693602091083623,
+                        longitude: 77.21464383448563,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }}
+                />
+            </View>
+            {/* You can use libraries like react-native-maps for maps */}
+            <HorizontalImageFlatList/>
         </View>
     );
 };
@@ -59,34 +51,28 @@ const DiscoverScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
     },
-    heading: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 16,
+    searchBarContainer: {
+        position: 'absolute',
+        top: 20,
+        left: 60, // Adjust the left position to position the search bar
+        right: 60, // Adjust the right position to position the search bar
+        zIndex: 1,
     },
-    locationItem: {
-        backgroundColor: '#fff',
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 16,
-        elevation: 2,
+    searchBar: {
+        borderWidth: 1,
+        borderColor: 'gray',
+        borderRadius: 5,
+        padding: 10,
+        backgroundColor: 'white',
     },
-    locationName: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        marginBottom: 8,
+    button: {
+        position: 'absolute', // Position the button
+        top: 20, // Adjust the top position as needed
+        left: 20, // Adjust the left position as needed
+        zIndex: 1, // Ensure the button is above other elements
     },
-    locationAddress: {
-        fontSize: 16,
-        color: 'gray',
-        marginBottom: 8,
-    },
-    locationDistance: {
-        fontSize: 16,
-        color: 'green',
-    },
+    // Add styles for your map component if necessary
 });
 
 export default DiscoverScreen;

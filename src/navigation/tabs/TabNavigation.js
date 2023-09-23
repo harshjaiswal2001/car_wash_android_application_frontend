@@ -2,11 +2,12 @@ import React from 'react';
 import {StyleSheet} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/Home';
-import DiscoverScreen from '../screens/Discover';
-import BookingScreen from '../screens/Booking';
-import ProfileScreen from '../screens/Profile';
+import HomeScreen from '../../screens/Home';
+import DiscoverScreen from "../../screens/Discover";
+import BookingScreen from '../../screens/booking/Booking';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ProfileStack from '../stacks/ProfileStack';
+import BookingStack from "../stacks/BookingStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -16,6 +17,7 @@ const AppNavigator = () => {
             <Tab.Navigator
                 screenOptions={({ route }) => ({
                     tabBarStyle:styles.tabBarStyle,
+                    headerShown:false,
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName;
 
@@ -36,8 +38,9 @@ const AppNavigator = () => {
 
                 })}
                 tabBarOptions={{
-                    activeTintColor: 'navy',
+                    activeTintColor: '#1F5170',
                     inactiveTintColor: 'gray',
+
 
                         labelStyle: {
                             fontSize: 16, // Font size of the tab labels
@@ -60,11 +63,11 @@ const AppNavigator = () => {
                 />
                 <Tab.Screen
                     name="Booking"
-                    component={BookingScreen}
+                    component={BookingStack}
                 />
                 <Tab.Screen
                     name="Profile"
-                    component={ProfileScreen}
+                    component={ProfileStack}
                 />
             </Tab.Navigator>
         </NavigationContainer>
@@ -76,9 +79,10 @@ export default AppNavigator;
 const styles = StyleSheet.create({
     tabBarStyle: {
         backgroundColor: '#ffffff', // Background color of the tab bar
-        borderTopWidth: 1, // Top border thickness
+
         borderTopColor: 'gray', // Top border color
         height: 65, // Adjust the height of the tab bar
         padding: 5,
+
     },
 });

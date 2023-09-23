@@ -3,17 +3,17 @@ import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react
 import Modal from 'react-native-modal';
 
 //importing icons from assets
-import editUserIcon from '../assets/user-logo.png';
-import favoriteIcon from '../assets/heart-favorite-icon.png';
-import carIcon from '../assets/car-icon.png';
-import addressIcon from '../assets/placeholder.png';
-import languageIcon from '../assets/internet.png';
-import termsIcon from '../assets/terms-and-conditions.png';
-import privacyIcon from '../assets/privacy.png';
-import helpIcon from '../assets/question.png';
-import logoutIcon from '../assets/logout.png';
-import additionalLogo from '../assets/right-chevron.png';
-import redAdditionalLogo from '../assets/icons8-arrow-red.png'
+import editUserIcon from '../../../assets/user-logo.png';
+import favoriteIcon from '../../../assets/heart-favorite-icon.png';
+import carIcon from '../../../assets/car-icon.png';
+import addressIcon from '../../../assets/placeholder.png';
+import languageIcon from '../../../assets/internet.png';
+import termsIcon from '../../../assets/terms-and-conditions.png';
+import privacyIcon from '../../../assets/privacy.png';
+import helpIcon from '../../../assets/question.png';
+import logoutIcon from '../../../assets/logout.png';
+import additionalLogo from '../../../assets/right-chevron.png';
+import redAdditionalLogo from '../../../assets/icons8-arrow-red.png'
 
 const ProfileScreen = ({ navigation }) => {
   const data = [
@@ -45,25 +45,25 @@ const ProfileScreen = ({ navigation }) => {
 
   const handleAction = (action) => {
     if (action === 'helpAndSupport') {
-      navigation.navigate('HelpAndSupport');
+      navigation.push('HelpAndSupport');
     } else if (action === 'privacyPolicy') {
-      navigation.navigate('PrivacyPolicy');
+      navigation.push('PrivacyPolicy');
     } else if (action === 'language') {
-      navigation.navigate('Language');
+      navigation.push('Language');
     }else if (action === 'termsAndCondition') {
-      navigation.navigate('TermsAndCondition');
+      navigation.push('TermsAndCondition');
     }else if (action === 'privacyPolicy') {
-      navigation.navigate('PrivacyPolicy');
+      navigation.push('PrivacyPolicy');
     } else if (action === 'logout') {
       toggleLogoutModal();
     } else if (action === 'myAddress') {
-      navigation.navigate('Address');
+      navigation.push('Address');
     } else if (action === 'editProfile') {
-      navigation.navigate('EditProfile');
+      navigation.push('EditProfile');
     } else if (action === 'myCar') {
-      navigation.navigate('MyCar');
+      navigation.push('MyCar');
     }else if (action === 'favorite') {
-      navigation.navigate('Favorite');
+      navigation.push('Favorite');
     }
 
 
@@ -73,7 +73,7 @@ const ProfileScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../assets/pexels-pixabay-220453.jpg')}
+          source={require('../../../assets/pexels-pixabay-220453.jpg')}
           style={styles.profilePicture}
         />
         <View style={styles.userInfo}>
