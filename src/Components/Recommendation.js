@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, View, Image, Text, StyleSheet, Button } from 'react-native';
+import {pixelNormalize} from "../constants/Size";
 
 const data = [
   {
@@ -83,56 +84,56 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingTop: 8,
+    paddingHorizontal: pixelNormalize(16),
+    paddingTop:pixelNormalize(8),
   },
   headerText: {
-    fontSize: 18,
+    fontSize: pixelNormalize(18),
     fontWeight: 'bold',
   },
   item: {
     flex: 1,
-    margin: 5,
-    borderRadius: 10,
+    margin:pixelNormalize(5),
+    borderRadius: pixelNormalize(10),
     overflow: 'hidden', // Ensure images don't overflow their containers
     shadowColor: 'rgba(0, 0, 0, 0.5)',
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    elevation: 3,
+    shadowOpacity:pixelNormalize(1),
+    shadowRadius:pixelNormalize(5),
+    elevation:pixelNormalize(3),
     borderColor: '#fff',
     backgroundColor: '#f8f8ff',
-    borderWidth: 1,
+    borderWidth:pixelNormalize(1),
   },
   image: {
-    width: 190, // Set your desired image width
-    height: 150, // Set your desired image height
+    width: pixelNormalize(190), // Set your desired image width
+    height:pixelNormalize(150), // Set your desired image height
   },
   textContainer: {
-    padding: 5,
+    padding:pixelNormalize(5),
     alignItems: 'flex-start', // Align text to the left
   },
   text: {
-    fontSize: 14,
+    fontSize:pixelNormalize(14),
     textAlign: 'left', // Align text to the left
   },
   boldText: {
-    fontSize: 56,
+    fontSize:pixelNormalize(56),
     fontWeight: 'bold', // Apply bold styling
     textAlign: 'left', // Align text to the left
   },
   biggerFont: {
-    fontSize: 18, // Apply a bigger font size
+    fontSize:pixelNormalize(18), // Apply a bigger font size
   },
   nearbyServiceCentersContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    marginTop: 20, // Adjust the marginTop as needed
+    paddingHorizontal:pixelNormalize(16),
+    marginTop:pixelNormalize(20), // Adjust the marginTop as needed
   },
   nearbyServiceCentersText: {
-    fontSize: 18,
+    fontSize:pixelNormalize(18),
     fontWeight: 'bold',
   },
 });
