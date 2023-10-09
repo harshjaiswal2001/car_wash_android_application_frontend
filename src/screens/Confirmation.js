@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity, Linking, FlatList, Modal,ScrollView} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {Picker} from '@react-native-picker/picker';
+//import {Picker} from '@react-native-picker/picker';
 import { addDays, format } from 'date-fns';
 
 
@@ -10,7 +10,7 @@ const servicesData = [
     { service: 'Service 1', price: '($50)' },
     { service: 'Service 2', price: '($70)' },
     { service: 'Interior Cleaning', price: '($90)' },
-    // Add more services as needed
+
 ];
 
 const ServiceListItem = ({ service, price }) => (

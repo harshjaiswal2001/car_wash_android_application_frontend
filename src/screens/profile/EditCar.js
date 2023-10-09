@@ -11,6 +11,7 @@ import { launchImageLibrary } from 'react-native-image-picker';
 //importing icons for modal overlay
 import galleryIcon from '../../../assets/icons8-gallery-48.png';
 import removeIcon from '../../../assets/icons8-remove-50.png';
+import {pixelNormalize} from "../../constants/Size";
 
 const EditCarScreen = ({ route ,navigation }) => {
 
@@ -203,91 +204,91 @@ const EditCarScreen = ({ route ,navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 16,
+        padding: pixelNormalize(16),
         alignItems: 'center',
     },
     profilePictureContainer: {
         position: 'relative',
     },
     profilePicture: {
-        width: 120,
-        height: 120,
-        borderRadius: 60,
-        marginBottom: 5,
+        width: pixelNormalize(120),
+        height: pixelNormalize(120),
+        borderRadius: pixelNormalize(60),
+        marginBottom: pixelNormalize(5),
     },
     cameraIcon: {
         position: 'absolute',
-        bottom: 6,
-        right: -2,
+        bottom: pixelNormalize(6),
+        right: pixelNormalize(-2),
         backgroundColor: 'white',
-        borderRadius: 60,
-        padding: 18,
-        width:20,
-        height:20,
+        borderRadius: pixelNormalize(60),
+        padding: pixelNormalize(18),
+        width:pixelNormalize(20),
+        height:pixelNormalize(20),
 
 
     },
     profileInfoContainer: {
         alignItems: 'center',
-        marginBottom: 16,
+        marginBottom: pixelNormalize(16),
     },
     nameText: {
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
         color: 'black',
-        marginBottom: 8,
-        marginTop: 20,
+        marginBottom:pixelNormalize(8),
+        marginTop: pixelNormalize(20),
     },
     infoText: {
-        fontSize: 16,
-        marginBottom: 8,
+        fontSize: pixelNormalize(16),
+        marginBottom: pixelNormalize(8),
     },
     inputContainer: {
         width: '100%',
-        marginBottom: 16,
-        marginTop:10,
+        marginBottom: pixelNormalize(16),
+        marginTop:pixelNormalize(10),
     },
     inputLabel: {
-        fontSize: 16,
-        marginBottom: 4,
+        fontSize: pixelNormalize(16),
+        marginBottom: pixelNormalize(4),
         color: 'gray',
         fontWeight:'bold',
 
     },
     input: {
         width: '100%',
-        height: 50, // Increase the height for more spacing
+        height:pixelNormalize(50),
         borderColor: '#fff',
         backgroundColor:'#f8f8ff',
-        borderWidth: 1,
-        borderRadius: 10, // Add border radius
-        textAlignVertical: 'center', // Center text vertically
-        paddingLeft: 15,
+        borderWidth: pixelNormalize(1),
+        borderRadius: pixelNormalize(10),
+        textAlignVertical: 'center',
+        paddingLeft: pixelNormalize(15),
         fontWeight: 'bold',
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(3),
     },
 
     updateButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(12),
         alignItems: 'center',
         width: '100%',
-        marginTop: 40,
-        marginBottom: 16,
+        marginTop: pixelNormalize(40),
+        marginBottom: pixelNormalize(16),
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(1), height:pixelNormalize(3) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(3),
     },
     updateButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
 // Modal Styles
@@ -295,25 +296,25 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginVertical: 10,
-        borderRadius:20,
+        marginVertical:pixelNormalize(10),
+        borderRadius:pixelNormalize(20),
         marginTop:'185%',
 
 
     },
     modalContent: {
         backgroundColor: 'white',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        padding: 20,
+        borderTopLeftRadius:pixelNormalize(20),
+        borderTopRightRadius: pixelNormalize(20),
+        padding: pixelNormalize(20),
         width: '110%', // Adjust the width as needed
         alignItems: 'center', // Center content horizontally
-        borderRadius:20,
+        borderRadius:pixelNormalize(20),
 
     },
     modalTitle: {
-        fontSize: 22,
-        marginBottom: 10,
+        fontSize:pixelNormalize(22),
+        marginBottom: pixelNormalize(10),
         alignItems:'center',
         color:'black',
     },
@@ -324,47 +325,46 @@ const styles = StyleSheet.create({
 
     },
     modalButton: {
-        width: 80, // Adjust the width and height as needed
-        height: 80,
-        borderRadius: 40, // Half of the width/height to make it circular
+        width: pixelNormalize(80),
+        height: pixelNormalize(80),
+        borderRadius: pixelNormalize(40),
         alignItems: 'center',
         justifyContent: 'space-between',
-
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 2,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize( 2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(2),
         backgroundColor: 'white',
-        margin:20,
+        margin:pixelNormalize(20),
 
     },
     modalIcon: {
-        width: 32,
-        height: 32,
-        marginBottom: 10,
+        width: pixelNormalize(32),
+        height: pixelNormalize(32),
+        marginBottom: pixelNormalize(10),
     },
     modalButtonText: {
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         color:'black',
 
     },
     messageContainer: {
-        backgroundColor: 'black', // Customize the background color
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        borderRadius: 10,
+        backgroundColor: 'black',
+        paddingVertical: pixelNormalize(10),
+        paddingHorizontal: pixelNormalize(20),
+        borderRadius: pixelNormalize(10),
         alignItems: 'center',
-        marginTop: 20, // Adjust the margin as needed
-        shadowColor: 'rgba(0, 128, 0, 0.4)', // Customize shadow color
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 4,
-        elevation: 3,
+        marginTop: pixelNormalize(20),
+        shadowColor: 'rgba(0, 128, 0, 0.4)',
+        shadowOffset: { width: pixelNormalize(0), height: pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(4),
+        elevation: pixelNormalize(3),
     },
     messageText: {
         color: 'white', // Customize text color
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         fontWeight: 'bold',
     },
 

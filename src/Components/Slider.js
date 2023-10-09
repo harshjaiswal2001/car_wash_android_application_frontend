@@ -1,6 +1,6 @@
-import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import {SliderBox} from 'react-native-image-slider-box';
+import { View, StyleSheet } from 'react-native';
+import { SliderBox } from 'react-native-image-slider-box';
 
 const Carousel = () => {
   const slides = [
@@ -10,24 +10,44 @@ const Carousel = () => {
   ];
 
   return (
-    <View style={styles.carouselContainer}>
-      <SliderBox
-        images={slides}
-        dotColor={'black'}
-        inactiveDotColor="grey"
-        ImageComponentStyle={{borderRadius: 15, width: '95%', margin: 8}}
-        autoplay
-        circleloop
-      />
-    </View>
+      <View style={styles.carouselContainer}>
+        <SliderBox
+            images={slides}
+            dotColor="black"
+            inactiveDotColor="grey"
+            paginationBoxVerticalPadding={20}
+            ImageComponentStyle={styles.imageComponentStyle}
+            paginationBoxStyle={styles.paginationBoxStyle}
+            circleLoop
+            autoplay
+        />
+      </View>
   );
 };
-
-export default Carousel;
 
 const styles = StyleSheet.create({
   carouselContainer: {
     flex: 1,
     alignItems: 'center',
+    margin:12,
+    padding:10,
+    top:-18
+  },
+  imageComponentStyle: {
+    borderRadius: 15,
+    width: '93%',
+    marginTop: 10,
+    margin:10,
+    height:150,
+  },
+  paginationBoxStyle: {
+    position: 'absolute',
+    bottom: -30,
+    paddingVertical: 10,
+    alignItems: 'center',
+    alignSelf: 'center',
+    justifyContent: 'center',
   },
 });
+
+export default Carousel;

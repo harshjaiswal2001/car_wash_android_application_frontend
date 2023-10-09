@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {View, Text, StyleSheet, Button, TouchableOpacity} from "react-native";
 import { RadioButton } from 'react-native-paper';
+import {pixelNormalize} from "../../constants/Size";
 
 
 const LanguageScreen = () => {
@@ -74,50 +75,50 @@ const LanguageScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: pixelNormalize(16),
   },
   title: {
-    fontSize: 24,
+    fontSize: pixelNormalize(24),
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: pixelNormalize(16),
   },
   radioContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 22,
-    borderRadius: 8,
-    borderWidth: 1,
+    marginBottom: pixelNormalize(22),
+    borderRadius: pixelNormalize(8),
+    borderWidth: pixelNormalize(1),
     borderColor: '#ddd',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    backgroundColor: '#fff', // Add a background color
-    elevation: 3, // Add elevation for shadow effect
+    paddingVertical: pixelNormalize(8),
+    paddingHorizontal: pixelNormalize(12),
+    backgroundColor: '#fff',
+    elevation: pixelNormalize(3),
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
+    shadowOffset: { width: pixelNormalize(0), height:pixelNormalize( 2 )},
+    shadowOpacity: pixelNormalize(0.2),
+    shadowRadius: pixelNormalize(2),
   },
   radioLabel: {
-    fontSize: 16,
-    marginLeft: 8,
+    fontSize: pixelNormalize(16),
+    marginLeft: pixelNormalize(8),
   },
     submitButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(12),
         alignItems: 'center',
         width: '100%',
         marginTop: 'auto', // Push the button to the bottom
-        marginBottom: 16,
+        marginBottom: pixelNormalize(16),
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 2,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(2),
     },
     submitButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
 });

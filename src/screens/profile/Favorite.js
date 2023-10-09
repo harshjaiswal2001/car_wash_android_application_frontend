@@ -6,6 +6,7 @@ import { Swipeable } from 'react-native-gesture-handler';
 import deleteIcon from "../../../assets/icons8-remove-50.png";
 import timingIcon from "../../../assets/icons8-clock-24.png";
 import locationIcon from "../../../assets/icons8-location-50.png"
+import {pixelNormalize} from "../../constants/Size";
 
 // Sample shop data
 const shopData = [
@@ -195,64 +196,64 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     shopItem: {
-        margin: 14,
-        marginBottom: 16,
-        borderRadius: 10,
+        margin: pixelNormalize(14),
+        marginBottom:pixelNormalize( 16),
+        borderRadius: pixelNormalize(10),
         overflow: 'hidden',
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3, // Adjusted shadow opacity
-        shadowRadius: 3, // Adjusted shadow radius
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize( 2) },
+        shadowOpacity: pixelNormalize(0.3),
+        shadowRadius: pixelNormalize(3),
+        elevation: pixelNormalize(3),
     },
     overlay: {
         flex: 1,
-        paddingVertical: 40,
-        borderRadius: 10,
+        paddingVertical: pixelNormalize(40),
+        borderRadius: pixelNormalize(10),
         width: '100%',
     },
     shopInfoContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: 20,
+        padding: pixelNormalize(20),
         flex: 1,
     },
     heartIcon: {
         position: 'absolute',
-        top: -25,
-        right: 10,
-        zIndex: 1
+        top: pixelNormalize(-25),
+        right: pixelNormalize(10),
+        zIndex: pixelNormalize(1),
     },
     favoriteImage: {
-        width: 30,
-        height: 30,
+        width: pixelNormalize(30),
+        height: pixelNormalize(30),
     },
     leftContainer: {
         flex: 1,
-        marginBottom: -56,
+        marginBottom: pixelNormalize(-56),
     },
     rightContainer: {
         alignItems: 'flex-end',
-        marginBottom: -107,
+        marginBottom: pixelNormalize(-107),
     },
     shopName: {
-        fontSize: 17,
+        fontSize: pixelNormalize(17),
         fontWeight: 'bold',
         color: 'black',
-        marginTop: 60,
+        marginTop: pixelNormalize(60),
     },
     shopTiming: {
-        fontSize: 13,
+        fontSize: pixelNormalize(13),
         color: 'black',
     },
     shopDistance: {
-        fontSize: 13,
+        fontSize: pixelNormalize(13),
         color: 'black',
     },
     shopAddress: {
-        fontSize: 11,
+        fontSize: pixelNormalize(11),
         color: 'gray',
     },
     ratingContainer: {
@@ -260,24 +261,24 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     ratingText: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         fontWeight: 'bold',
         color: 'black',
-        marginLeft: 4,
+        marginLeft: pixelNormalize(4),
     },
     directionButton: {
         backgroundColor: 'white',
-        borderRadius: 10,
-        paddingVertical: 8,
-        paddingHorizontal: 12,
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(8),
+        paddingHorizontal: pixelNormalize(12),
         alignItems: 'center',
-        marginTop: 8,
+        marginTop: pixelNormalize(8),
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3, // Adjusted shadow opacity
-        shadowRadius: 3, // Adjusted shadow radius
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(0), height: pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(0.3),
+        shadowRadius: pixelNormalize(3),
+        elevation: pixelNormalize(3),
     },
     directionButtonText: {
         color: 'navy',
@@ -287,16 +288,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 60,
-        height: 200,
-        borderRadius: 10,
-        marginRight: 2,
-        marginLeft:16,
-        marginTop:12,
+        width: pixelNormalize(60),
+        height: pixelNormalize(200),
+        borderRadius:pixelNormalize(10),
+        marginRight: pixelNormalize(2),
+        marginLeft:pixelNormalize(16),
+        marginTop:pixelNormalize(12),
     },
     deleteIcon: {
-        width: 25,
-        height: 25,
+        width: pixelNormalize(25),
+        height: pixelNormalize(25),
         tintColor: '#fff',
     },
     iconContainer: {
@@ -304,14 +305,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     timingIcon: {
-        width: 14,
-        height: 14,
-        marginRight: 4,
+        width: pixelNormalize(14),
+        height: pixelNormalize(14),
+        marginRight:pixelNormalize( 4),
     },
     locationIcon: {
-        width: 14,
-        height: 14,
-        marginRight: 4,
+        width:pixelNormalize(14),
+        height:pixelNormalize(14),
+        marginRight: pixelNormalize(4),
         tintColor:'gray',
     },
 });

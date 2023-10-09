@@ -27,6 +27,8 @@ import TabNavigation from "./src/navigation/tabs/TabNavigation";
 import BookingScreen from "./src/screens/booking/booking";
 import Details from "./src/screens/booking/Details";
 import DiscoverScreen from "./src/screens/Discover";
+import GetDirectionScreen from "./src/screens/DirectionScreen";
+import MapScreen from "./src/screens/DirectionScreen";
 
 
 
@@ -37,7 +39,8 @@ const App = () => {
   return (
         // <NavigationContainer>
               <AppNavigator/>
-
+    //  <BookNowScreen/>
+      //<MapScreen/>
       //  <GoHistoryDetailsScreen/>
      // <GoDetailsScreen/>
     //<MainStack/>
@@ -47,6 +50,7 @@ const App = () => {
      // <ConfirmationScreen/>
      //<BookNowScreen/>
     //<BookingScreen/>
+      //<ConfirmationScreen/>
       //<DiscoverScreen/>
   );
 };

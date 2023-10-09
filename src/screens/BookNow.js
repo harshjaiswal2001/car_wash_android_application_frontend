@@ -88,7 +88,7 @@ const ReviewItem = ({ name, rating, date, reviewText, profileImage }) => {
 };
 
 
-const BookNowScreen = () => {
+const BookNowScreen = ({navigation}) => {
     const [showFullAbout, setShowFullAbout] = useState(false);
     const [selectedServices, setSelectedServices] = useState([]);
     const [isFavorite, setIsFavorite] = useState(false);
@@ -217,7 +217,7 @@ const BookNowScreen = () => {
             <View style={styles.reviewsContainer}>
                 <View style={styles.reviewsHeader}>
                     <Text style={styles.reviewsTitle}>Customer Reviews</Text>
-                    <TouchableOpacity onPress={() => console.log('See All Reviews')}>
+                    <TouchableOpacity onPress={() => navigation.push('ReviewScreen')}>
                         <Text style={styles.seeAllButton}>See All</Text>
                     </TouchableOpacity>
                 </View>
