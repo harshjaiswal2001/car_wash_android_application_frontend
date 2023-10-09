@@ -166,8 +166,9 @@ const OngoingBookingScreen = ({navigation}) => {
     };
 
     return (
-        <ScrollView>
+
         <View style={styles.container}>
+            <ScrollView>
             <FlatList
                 data={shopData}
                 keyExtractor={(item) => item.id}
@@ -175,8 +176,9 @@ const OngoingBookingScreen = ({navigation}) => {
                 nestedScrollEnabled={true}
             />
 
+            </ScrollView>
         </View>
-        </ScrollView>
+
     );
 };
 
@@ -185,6 +187,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor:'#efefef',
     },
+
     shopItem: {
         margin:pixelNormalize(14),
         marginBottom:pixelNormalize(16),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {View, Text, ScrollView} from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import OngoingBookingScreen from "./OngoingBooking";
 import BookingHistoryScreen from "./BookingHistory";
@@ -12,6 +12,7 @@ const Tab = createMaterialTopTabNavigator();
 
 const BookingScreen = () => {
     return (
+
         <Tab.Navigator
             tabBarOptions={{
 
@@ -31,7 +32,8 @@ const BookingScreen = () => {
         >
             <Tab.Screen
                 name="Ongoing"
-                component={OngoingBookingScreen}
+                component={  () =>(
+                    <ScrollView>  <OngoingBookingScreen/>   </ScrollView>) }
                 options={{ tabBarLabel: 'Ongoing booking' }}
             />
             <Tab.Screen
@@ -40,6 +42,7 @@ const BookingScreen = () => {
                 options={{ tabBarLabel: 'Booking history' }}
             />
         </Tab.Navigator>
+
     );
 };
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import Swipeable from 'react-native-swipeable';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {pixelNormalize} from "../constants/Size";
 
 const NotificationScreen = () => {
     const [newNotifications, setNewNotifications] = useState([
@@ -90,61 +91,61 @@ const styles = StyleSheet.create({
     notificationItem: {
         flexDirection: 'row',
         alignItems: 'center',
-        padding: 20,
-        borderRadius: 15,
-        marginBottom: 20,
+        padding:pixelNormalize(20),
+        borderRadius: pixelNormalize(15),
+        marginBottom:pixelNormalize(20),
         backgroundColor: '#f1f1f1',
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(1), height: pixelNormalize(3) },
+        shadowOpacity: pixelNormalize(0.2),
+        shadowRadius: pixelNormalize(2),
+        elevation: pixelNormalize(3),
     },
     sectionHeader: {
-        fontSize: 20,
+        fontSize: pixelNormalize(20),
         fontWeight: 'bold',
-        marginBottom: 15,
+        marginBottom: pixelNormalize(15),
         color:'black'
     },
     iconContainer: {
         backgroundColor: 'blue',
-        borderRadius: 25,
-        padding: 10,
-        marginRight: 10,
+        borderRadius: pixelNormalize(25),
+        padding:pixelNormalize(10),
+        marginRight:pixelNormalize(10),
     },
     textContainer: {
         flex: 1,
-        marginRight: 10,
+        marginRight: pixelNormalize(10),
     },
     title: {
-        fontSize: 18,
+        fontSize:pixelNormalize(18),
         fontWeight: 'bold',
         color: 'black',
     },
     info: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'black',
     },
     time: {
-        fontSize: 14,
+        fontSize: pixelNormalize(14),
         color: 'gray',
-        marginLeft: 5,
+        marginLeft: pixelNormalize(5),
     },
     timeContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-end',
-        marginTop: 5,
-        right: 190,
+        marginTop: pixelNormalize(5),
+        right: pixelNormalize(190),
     },
     rightSwipeItem: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'flex-end',
-        paddingRight: 20,
+        paddingRight:pixelNormalize( 20),
         backgroundColor: 'navy',
-        borderRadius:20,
+        borderRadius:pixelNormalize(20),
 
     },
 });

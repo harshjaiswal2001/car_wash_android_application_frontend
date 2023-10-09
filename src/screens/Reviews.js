@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {pixelNormalize} from "../constants/Size";
 
 const reviewData = [
     {
@@ -98,29 +99,29 @@ const ReviewScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        padding: pixelNormalize(20),
     },
     reviewItem: {
-        marginBottom: 20,
+        marginBottom: pixelNormalize(20),
     },
     profileContainer: {
         flexDirection: 'row',
-        marginBottom: 10,
+        marginBottom: pixelNormalize(10),
     },
     profileImage: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        marginRight: 10,
+        width: pixelNormalize(50),
+        height: pixelNormalize(50),
+        borderRadius: pixelNormalize(25),
+        marginRight: pixelNormalize(10),
     },
     userInfo: {
         flex: 1,
         justifyContent: 'center',
     },
     name: {
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom: pixelNormalize(5),
         color:'black',
     },
     ratingContainer: {
@@ -128,20 +129,20 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     ratingText: {
-        marginLeft: 5,
+        marginLeft: pixelNormalize(5),
     },
     date: {
-        fontSize: 12,
+        fontSize: pixelNormalize(12),
         color: 'grey',
-        marginBottom: 5,
+        marginBottom:pixelNormalize( 5),
     },
     reviewText: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
     },
     bottomBorder: {
         borderBottomColor: 'grey',
-        borderBottomWidth: 1,
-        marginTop: 10,
+        borderBottomWidth: pixelNormalize(1),
+        marginTop: pixelNormalize(10),
     },
 });
 

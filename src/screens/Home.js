@@ -7,6 +7,7 @@ import Recommendation from '../components/Recommendation';
 import LogoImage from '../../assets/super-shine-low-resolution-logo-color-on-transparent-background.png';
 import ServiceCenter from "../components/ServiceCenter";
 import RecommendationScreen from "../components/Recommendation";
+import {pixelNormalize} from "../constants/Size";
 
 const HomeScreen = ({navigation}) => {
   return (
@@ -59,82 +60,82 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 5,
+    paddingHorizontal:pixelNormalize(5),
   },
   innerContainer:{
     flex:1,
-    marginBottom:70
+    marginBottom:pixelNormalize(70)
   },
   logoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: 12,
-    marginLeft:-10,
-    top:-10
+    padding: pixelNormalize(12),
+    marginLeft:pixelNormalize(-10),
+    top:pixelNormalize(-10)
   },
   logo: {
-    width: 230,
-    height: 30,
+    width: pixelNormalize(230),
+    height: pixelNormalize(30),
     resizeMode: 'cover',
   },
   addressContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    top:35,
-    right:230
+    top:pixelNormalize(35),
+    right:pixelNormalize(230)
   },
   addressText: {
-    marginLeft: 5,
-    fontSize: 15,
-    padding:10
+    marginLeft:pixelNormalize( 5),
+    fontSize: pixelNormalize(15),
+    padding:pixelNormalize(10)
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
+    padding: pixelNormalize(10),
   },
   notificationContainer: {
-    padding:-1,
+    padding:pixelNormalize(-1),
   },
   notificationButton: {
-    padding: 10,
-    left:-260,
-    top:-10
+    padding:pixelNormalize(10),
+    left:pixelNormalize(-260),
+    top:pixelNormalize(-10)
 
   },
   serviceStatusText: {
-    fontSize: 18,
+    fontSize: pixelNormalize(18),
     fontWeight: 'bold',
-    padding: 10,
-    marginBottom: -33,
+    padding: pixelNormalize(10),
+    marginBottom:pixelNormalize(-33),
     color: 'black',
-    marginLeft: 4,
-    top:-20
+    marginLeft:pixelNormalize(4),
+    top:pixelNormalize(-20)
   },
 
   recommendationText: {
-    fontSize: 18,
+    fontSize: pixelNormalize(18),
     fontWeight: 'bold',
-    padding: 10,
-    marginBottom: -33,
+    padding: pixelNormalize(10),
+    marginBottom:pixelNormalize(-33),
     color: 'black',
-    marginLeft: 4,
-    top:-17,
-    margin:14,
-    left:3
+    marginLeft:pixelNormalize(4),
+    top:pixelNormalize(-17),
+    margin:pixelNormalize(14),
+    left:pixelNormalize(3)
 
   },
   recommendationHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
-    marginTop: -30,
-    marginBottom: -20,
-    top:20,
-    left:-7
+    padding:pixelNormalize(10),
+    marginTop: pixelNormalize(-30),
+    marginBottom:pixelNormalize(-20),
+    top:pixelNormalize(20),
+    left:pixelNormalize(-7)
   },
   viewAllButton: {
     color: '#1F5170',
@@ -143,23 +144,23 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
-    marginTop: -30,
-    marginBottom: -30,
-    top:40,
-    left:-7,
+    padding:pixelNormalize(10),
+    marginTop:pixelNormalize(-30),
+    marginBottom:pixelNormalize(-30),
+    top:pixelNormalize(40),
+    left:pixelNormalize(-7),
 
   },
   serviceCenterText: {
-    fontSize: 18,
+    fontSize:pixelNormalize(18),
     fontWeight: 'bold',
-    padding: 10,
-    marginBottom: -33,
+    padding:pixelNormalize(10),
+    marginBottom:pixelNormalize(-33),
     color: 'black',
-    marginLeft: 4,
-    top:-17,
-    margin:12,
-    left:3
+    marginLeft: pixelNormalize(4),
+    top:pixelNormalize(-17),
+    margin:pixelNormalize(12),
+    left:pixelNormalize(3)
 
   },
 

@@ -5,6 +5,7 @@ import StarRating from 'react-native-star-rating';
 import timingIcon from "../../assets/icons8-clock-24.png";
 import locationIcon from "../../assets/icons8-location-50.png";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {pixelNormalize} from "../constants/Size";
 
 
 const splitTextIntoLines = (text, wordsPerLine) => {
@@ -252,32 +253,32 @@ const styles = StyleSheet.create({
     },
     containerScroll: {
         flex: 1,
-        marginTop:40,
+        marginTop:pixelNormalize(40),
     },
     topIcons:{
-        marginRight:10,
+        marginRight:pixelNormalize(10),
     },
     detailsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 20,
+        padding: pixelNormalize(20),
 
     },
     shopDetails: {
         flex: 1,
     },
     shopName: {
-        fontSize: 20,
+        fontSize: pixelNormalize(20),
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom: pixelNormalize(5),
         color:'black'
     },
 
     ratingText: {
-        fontSize: 14,
+        fontSize: pixelNormalize(14),
         color: 'black',
-        marginLeft: 4,
-        marginRight:4
+        marginLeft: pixelNormalize(4),
+        marginRight:pixelNormalize(4)
     },
     ratingContainer: {
         flexDirection: 'row',
@@ -291,66 +292,66 @@ const styles = StyleSheet.create({
     iconContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        size:20,
+        size:pixelNormalize(20),
     },
     shopTiming: {
-        fontSize: 14,
+        fontSize: pixelNormalize(14),
         color: 'black',
     },
     shopDistance: {
-        fontSize: 14,
+        fontSize: pixelNormalize(14),
         color: 'black',
     },
     shopAddress:{
-        fontSize:13,
+        fontSize:pixelNormalize(13),
     },
 
     ratingAndButtonContainer: {
         alignItems: 'flex-end',
-        marginTop:10,
+        marginTop:pixelNormalize(10),
     },
     directionButton: {
         backgroundColor: 'white',
-        borderRadius: 10,
-        paddingVertical: 12,
-        paddingHorizontal: 14,
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(12),
+        paddingHorizontal: pixelNormalize(14),
         alignItems: 'center',
-        marginTop: 10,
+        marginTop: pixelNormalize(10),
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.2, // Adjusted shadow opacity
-        shadowRadius: 3, // Adjusted shadow radius
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(0), height: pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(0.2), // Adjusted shadow opacity
+        shadowRadius: pixelNormalize(3), // Adjusted shadow radius
+        elevation: pixelNormalize(3),
     },
     directionButtonText: {
         color: 'navy',
         fontWeight: 'bold',
     },
     icon: {
-        marginRight: 5,
+        marginRight: pixelNormalize(5),
     },
     aboutContainer: {
-        padding: 20,
-        marginTop: -20,
+        padding: pixelNormalize(20),
+        marginTop: pixelNormalize(-20),
     },
     aboutTitle: {
-        fontSize: 20,
+        fontSize: pixelNormalize(20),
         fontWeight: 'bold',
-        marginBottom: 10,
+        marginBottom: pixelNormalize(10),
         color:'black'
     },
 
     iconContainerOne: {
         position: 'absolute',
-        top: 10,
-        right: 10,
+        top: pixelNormalize(10),
+        right: pixelNormalize(10),
         flexDirection: 'row',
     },
 
     aboutText: {
-        fontSize: 14.5,
-        lineHeight: 20,
-        marginBottom:2,
+        fontSize: pixelNormalize(14.5),
+        lineHeight: pixelNormalize(20),
+        marginBottom:pixelNormalize(2),
         flexDirection:'row'
     },
     readMore: {
@@ -358,87 +359,87 @@ const styles = StyleSheet.create({
         color: 'red',
     },
     servicesContainer: {
-        padding: 20,
-        height: 250, // Set a fixed height
+        padding: pixelNormalize(20),
+        height: pixelNormalize(250),
         width:"100%"
 
     },
     servicesTitle: {
-        fontSize: 20,
+        fontSize: pixelNormalize(20),
         fontWeight: 'bold',
-        marginBottom: 20,
+        marginBottom: pixelNormalize(20),
         color: 'black',
     },
     servicesList: {
         alignItems: 'center',
     },
     serviceItem: {
-        width: 180, // Set a fixed width
-        height: 170, // Set a fixed height
+        width: pixelNormalize(180), // Set a fixed width
+        height: pixelNormalize(170), // Set a fixed height
         alignItems: 'center',
-        borderRadius: 10,
+        borderRadius: pixelNormalize(10),
         backgroundColor: 'white',
-        padding: 10,
-        marginRight: 15,
+        padding: pixelNormalize(10),
+        marginRight: pixelNormalize(15),
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: 1, height: 3 },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 3,
+        shadowOffset: { width: pixelNormalize(1), height: pixelNormalize(3) },
+        shadowOpacity: pixelNormalize(0.2),
+        shadowRadius: pixelNormalize(2),
+        elevation: pixelNormalize(3),
     },
     serviceImage: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        marginBottom: 10,
+        width: pixelNormalize(80),
+        height: pixelNormalize(80),
+        borderRadius: pixelNormalize(40),
+        marginBottom: pixelNormalize(10),
     },
     serviceName: {
-        fontSize: 16,
+        fontSize: pixelNormalize(16),
         color: 'black',
-        marginBottom: 5,
+        marginBottom: pixelNormalize(5),
         fontWeight:'bold',
     },
     servicePrice: {
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         color: 'navy',
         fontWeight:'bold'
     },
     reviewsContainer: {
-        padding: 20,
-        marginTop: 20,
+        padding: pixelNormalize(20),
+        marginTop: pixelNormalize(20),
     },
     reviewsHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginBottom: 10,
+        marginBottom: pixelNormalize(10),
     },
     reviewItem: {
-        marginBottom: 20,
+        marginBottom: pixelNormalize(20),
     },
     reviewsTitle: {
-        fontSize: 20,
+        fontSize: pixelNormalize(20),
         fontWeight: 'bold',
         color: 'black',
     },
     profileContainer: {
         flexDirection: 'row',
-        marginBottom: 10,
+        marginBottom: pixelNormalize(10),
     },
     profileImage: {
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        marginRight: 10,
+        width: pixelNormalize(50),
+        height: pixelNormalize(50),
+        borderRadius: pixelNormalize(25),
+        marginRight:pixelNormalize(10),
     },
     userInfo: {
         flex: 1,
         justifyContent: 'center',
     },
     name: {
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
-        marginBottom: 5,
+        marginBottom:pixelNormalize(5),
         color:'black',
     },
     ratingContainerTwo: {
@@ -446,45 +447,45 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     ratingTextTwo: {
-        marginLeft: 5,
+        marginLeft: pixelNormalize(5),
     },
     date: {
-        fontSize: 12,
+        fontSize: pixelNormalize(12),
         color: 'grey',
-        marginBottom: 5,
+        marginBottom: pixelNormalize(5),
     },
     reviewText: {
-        fontSize: 14.5,
+        fontSize: pixelNormalize(14.5),
     },
     bottomBorder: {
         borderBottomColor: 'grey',
-        borderBottomWidth: 1,
-        marginTop: 10,
+        borderBottomWidth: pixelNormalize(1),
+        marginTop: pixelNormalize(10),
     },    seeAllButton: {
         color: 'blue',
     },
 
     reviewComment: {
-        fontSize: 14,
+        fontSize:pixelNormalize(14),
         color: 'black',
     },
     submitButton: {
         backgroundColor: 'navy',
-        borderRadius: 10,
-        paddingVertical: 12,
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(12),
         alignItems: 'center',
         width: '100%',
         marginTop: 'auto', // Push the button to the bottom
-        marginBottom: 16,
+        marginBottom: pixelNormalize(16),
         shadowColor: 'rgba(0, 0, 0, 0.2)',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 1,
-        shadowRadius: 5,
-        elevation: 2,
+        shadowOffset: { width: pixelNormalize(0), height: pixelNormalize(2) },
+        shadowOpacity: pixelNormalize(1),
+        shadowRadius: pixelNormalize(5),
+        elevation: pixelNormalize(2),
     },
     submitButtonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
 });
