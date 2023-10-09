@@ -12,6 +12,8 @@ import FavoriteScreen from "../../screens/profile/Favorite";
 import GoDetailsScreen from "../../screens/booking/Details";
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
+import EditAddressScreen from "../../screens/profile/EditAddress";
+import AddAddressScreen from "../../screens/profile/AddAddress";
 
 
 const Stack = createStackNavigator();
@@ -31,6 +33,8 @@ const ProfileStack = () => {
             <Stack.Screen name="AddCar" component={AddCarScreen} options={{ title: 'Add new car', headerTitleStyle: { fontWeight: 'bold' } }} />
             <Stack.Screen name="Favorite" component={FavoriteScreen} options={{ title: 'Favorite', headerTitleStyle: { fontWeight: 'bold' } }} />
             <Stack.Screen name="GoDetailsScreen" component={GoDetailsScreen} />
+            <Stack.Screen name="EditAddressScreen" component={EditAddressScreen} />
+            <Stack.Screen name="AddNewAddressScreen" component={AddAddressScreen} />
         </Stack.Navigator>
     );
 };

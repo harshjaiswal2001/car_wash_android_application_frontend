@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {pixelNormalize} from "../constants/Size";
+import {pixelNormalize} from "../../constants/Size";
 
 const reviewData = [
     {
@@ -10,7 +10,7 @@ const reviewData = [
         rating: 4.5,
         date: 'August 25, 2023',
         reviewText: 'This was a great experience. I would highly recommend this service! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugi' ,
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '2',
@@ -18,7 +18,7 @@ const reviewData = [
         rating: 3.8,
         date: 'August 22, 2023',
         reviewText: 'The service was good, but there\'s room for imprvement. Lorem ipsum dolor sit amet, conseclamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '3',
@@ -26,7 +26,7 @@ const reviewData = [
         rating: 4.2,
         date: 'August 20, 2023',
         reviewText: 'Friendly staff and excellent service. Will definitely come back!Lorem ipsum dolor sit ameoris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '4',
@@ -34,7 +34,7 @@ const reviewData = [
         rating: 5.0,
         date: 'August 18, 2023',
         reviewText: 'Amazing experience! Quick and efficient service. Highly recommended. Lorem ipsum dolor n voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '5',
@@ -42,7 +42,7 @@ const reviewData = [
         rating: 3.5,
         date: 'August 15, 2023',
         reviewText: 'Decent service but a bit expensive for the quality provided.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '6',
@@ -50,7 +50,7 @@ const reviewData = [
         rating: 4.7,
         date: 'August 12, 2023',
         reviewText: 'Excellent service! The staff was friendly and the work was top-notch.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     // Add more review data as needed
 ];

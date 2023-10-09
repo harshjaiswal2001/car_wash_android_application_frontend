@@ -66,7 +66,7 @@ const AddressScreen = ({ navigation }) => {
                         </View>
                         <TouchableOpacity
                             style={styles.editButton}
-                            onPress={() => editAddress(item.id)}
+                            onPress={() =>navigation.push('EditAddressScreen')}
                         >
                             <Image source={editImage} style={styles.editImage} />
                         </TouchableOpacity>
@@ -103,7 +103,7 @@ const AddressScreen = ({ navigation }) => {
             />
             <TouchableOpacity
                 style={styles.addButton}
-                onPress={() => navigation.navigate('AddNewAddress')}
+                onPress={() => navigation.push('AddNewAddressScreen')}
             >
                 <Text style={styles.addButtonText}>Add New Address</Text>
             </TouchableOpacity>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
     categoryText: {
         fontSize: pixelNormalize(16),
         fontWeight: 'bold',
-        color: '#339AF0',
+        color: '#1F5170',
     },
     addressText: {
         fontSize: pixelNormalize(16),
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
     },
     addButton: {
-        backgroundColor: 'navy',
+        backgroundColor: '#1F5170',
         borderRadius: pixelNormalize(10),
         paddingVertical: pixelNormalize(12),
         alignItems: 'center',
@@ -195,6 +195,7 @@ const styles = StyleSheet.create({
         height: pixelNormalize(20),
         marginLeft: pixelNormalize(8),
         marginRight: pixelNormalize(8),
+       // tintColor:'#1F5170',
     },
     addressInfo: {
         flexDirection: 'row',

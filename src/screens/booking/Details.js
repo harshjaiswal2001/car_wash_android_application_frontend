@@ -304,8 +304,8 @@ const styles = StyleSheet.create({
     discountAmount: {
         fontSize:pixelNormalize(19),
         color: "darkblue",
-        letterSpacing:pixelNormalize(0.3),
-        padding:pixelNormalize(4),
+        letterSpacing: pixelNormalize(0.3),
+        padding: pixelNormalize(4),
         fontWeight: 'bold',
         marginLeft:'auto',
         marginRight:pixelNormalize(10),

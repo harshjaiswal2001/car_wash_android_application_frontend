@@ -5,9 +5,9 @@ import {SliderBox} from 'react-native-image-slider-box';
 const CarouselScreen= () => {
     const slides = [  require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
         require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        require('../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
         require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
-        require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
-        require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        require('../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
 
     ];
 
@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
 
     },
 
-//sh
+//sample
 
 });

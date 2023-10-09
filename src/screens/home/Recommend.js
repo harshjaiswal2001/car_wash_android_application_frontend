@@ -3,11 +3,11 @@ import {View, FlatList, ImageBackground, Text, StyleSheet, TouchableOpacity, Ima
 import StarRating from 'react-native-star-rating';
 import LinearGradient from 'react-native-linear-gradient';
 import { Swipeable } from 'react-native-gesture-handler';
-import deleteIcon from "../../assets/icons8-remove-50.png";
-import timingIcon from "../../assets/icons8-clock-24.png";
-import locationIcon from "../../assets/icons8-location-50.png"
+import deleteIcon from "../../../assets/icons8-remove-50.png";
+import timingIcon from "../../../assets/icons8-clock-24.png";
+import locationIcon from "../../../assets/icons8-location-50.png"
 import { PanGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
-import {pixelNormalize} from "../constants/Size";
+import {pixelNormalize} from "../../constants/Size";
 
 
 // Sample shop data
@@ -19,7 +19,7 @@ const shopData = [
         distance: '1.2 miles away',
         address: '123 Main St, City, Country',
         rating: 4.5,
-        image: require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '2',
@@ -28,7 +28,7 @@ const shopData = [
         distance: '2.5 miles away',
         address: '456 Elm St, City, Country',
         rating: 4.2,
-        image: require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '3',
@@ -37,7 +37,7 @@ const shopData = [
         distance: '0.8 miles away',
         address: '789 Oak St, City, Country 789 Oak St, City, Country',
         rating: 3.8,
-        image: require('../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
+        image: require('../../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
     },
     {
         id: '4',
@@ -46,7 +46,7 @@ const shopData = [
         distance: '3.8 miles away',
         address: '101 Pine St, City, Country',
         rating: 4.7,
-        image: require('../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
+        image: require('../../../assets/aaron-huber-8qYE6LGHW-c-unsplash.jpg'),
     },
     {
         id: '5',
@@ -55,7 +55,7 @@ const shopData = [
         distance: '1.0 miles away',
         address: '246 Maple St, City, Country ',
         rating: 4.0,
-        image: require('../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
+        image: require('../../../assets/martin-katler-y3neNkE6efI-unsplash.jpg'),
     },
     // Add more shop data as needed
 ];
@@ -153,7 +153,7 @@ const RecommendScreen = ({navigation}) => {
                                                 />
                                                 <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
                                             </View>
-                                            <TouchableOpacity style={styles.detailButton} >
+                                            <TouchableOpacity style={styles.detailButton} onPress={()=> navigation.push('GetDirectionScreen')} >
                                                 <Text style={styles.detailButtonText}>Get direction</Text>
                                             </TouchableOpacity>
                                         </View>

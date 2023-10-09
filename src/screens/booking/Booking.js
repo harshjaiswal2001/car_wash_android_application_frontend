@@ -32,8 +32,7 @@ const BookingScreen = () => {
         >
             <Tab.Screen
                 name="Ongoing"
-                component={  () =>(
-                    <ScrollView>  <OngoingBookingScreen/>   </ScrollView>) }
+                component={ OngoingBookingScreen }
                 options={{ tabBarLabel: 'Ongoing booking' }}
             />
             <Tab.Screen

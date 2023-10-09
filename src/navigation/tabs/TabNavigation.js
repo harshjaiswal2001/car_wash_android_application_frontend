@@ -2,13 +2,11 @@ import React from 'react';
 import {StyleSheet} from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../../screens/Home';
-import DiscoverScreen from "../../screens/Discover";
-import BookingScreen from '../../screens/booking/Booking';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ProfileStack from '../stacks/ProfileStack';
 import BookingStack from "../stacks/BookingStack";
 import HomeStack from "../stacks/HomeStack";
+import DiscoverStack from "../stacks/DiscoverStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -60,7 +58,7 @@ const AppNavigator = () => {
                 />
                 <Tab.Screen
                     name="Discover"
-                    component={DiscoverScreen}
+                    component={DiscoverStack}
                 />
                 <Tab.Screen
                     name="Booking"

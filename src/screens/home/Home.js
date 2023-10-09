@@ -1,13 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, Pressable, ScrollView, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Carousel from '../components/Slider';
-import ServiceStatus from '../components/ServiceStatus';
-import Recommendation from '../components/Recommendation';
-import LogoImage from '../../assets/super-shine-low-resolution-logo-color-on-transparent-background.png';
-import ServiceCenter from "../components/ServiceCenter";
-import RecommendationScreen from "../components/Recommendation";
-import {pixelNormalize} from "../constants/Size";
+import Carousel from '../../components/Slider';
+import ServiceStatus from '../../components/ServiceStatus';
+//import Recommendation from '../components/Recommendation';
+import LogoImage from '../../../assets/super-shine-low-resolution-logo-color-on-transparent-background.png';
+import ServiceCenter from "../../components/ServiceCenter";
+import RecommendationScreen from "../../components/Recommendation";
+import {pixelNormalize} from "../../constants/Size";
 
 const HomeScreen = ({navigation}) => {
   return (

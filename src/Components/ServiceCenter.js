@@ -36,23 +36,9 @@ const shopData = [
 
 const ServiceCenter = () => {
     const navigation = useNavigation();
-    const [favorites, setFavorites] = useState({}); // Store favorite status for each shop
-    const [openSwipeableId, setOpenSwipeableId] = useState(null);
 
 
-    const handleDeleteFavorite = ({ id }) => {
-        // Remove the favorite item with the given id
-        const updatedShopData = shopData.filter((item) => item.id !== id);
-        setFavorites(updatedShopData);
-    };
 
-    const closeSwipeable = () => {
-        setOpenSwipeableId(null);
-    };
-
-    const handleFlatListItemPress = (item) => {
-        console.log(`Flat List Item Clicked: ${item.name}`);
-    };
 
 
     const renderShopItem = ({ item }) => {
@@ -113,8 +99,7 @@ const ServiceCenter = () => {
                                                 />
                                                 <Text style={styles.ratingText}>{item.rating.toFixed(1)}</Text>
                                             </View>
-                                            <TouchableOpacity style={styles.detailButton} onPress={()=>
-                                                navigation.push('GetDirectionScreen')}>
+                                            <TouchableOpacity style={styles.detailButton} onPress={()=> navigation.push('GetDirectionScreen')}>
                                                 <Text style={styles.detailButtonText}>Get direction</Text>
                                             </TouchableOpacity>
                                         </View>
@@ -146,7 +131,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor:'#efefef',
-        top:70
+        top:pixelNormalize(70)
     },
     shopItem: {
         margin: pixelNormalize(14),

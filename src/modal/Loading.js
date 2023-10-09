@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, ActivityIndicator, Modal, StyleSheet } from 'react-native';
+import {pixelNormalize} from "../constants/Size";
 
 const LoadingModal = ({ visible, text }) => {
     return (
@@ -28,13 +29,13 @@ const styles = StyleSheet.create({
     },
     modalContent: {
         backgroundColor: 'white',
-        borderRadius: 10,
-        padding: 20,
+        borderRadius: pixelNormalize(10),
+        padding:pixelNormalize( 20),
         alignItems: 'center',
     },
     modalText: {
-        marginTop: 10,
-        fontSize: 18,
+        marginTop: pixelNormalize(10),
+        fontSize: pixelNormalize(18),
         fontWeight: 'bold',
     },
 });

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import Swipeable from 'react-native-swipeable';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {pixelNormalize} from "../constants/Size";
+import {pixelNormalize} from "../../constants/Size";
 
 const NotificationScreen = () => {
     const [newNotifications, setNewNotifications] = useState([
@@ -86,7 +86,7 @@ const NotificationScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
+        padding: pixelNormalize(20),
     },
     notificationItem: {
         flexDirection: 'row',

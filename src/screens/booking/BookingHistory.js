@@ -7,7 +7,6 @@ import deleteIcon from "../../../assets/icons8-remove-50.png";
 import timingIcon from "../../../assets/icons8-clock-24.png";
 import locationIcon from "../../../assets/icons8-location-50.png"
 import { PanGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
-import GoHistoryDetailsScreen from "../../screens/booking/HistoryDetails";
 import {pixelNormalize} from "../../constants/Size";
 
 

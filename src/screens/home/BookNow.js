@@ -1,11 +1,11 @@
 import React ,{useState} from 'react';
 import {View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, FlatList} from 'react-native';
-import CarouselScreen from '../components/Carousel';
+import CarouselScreen from '../../components/Carousel';
 import StarRating from 'react-native-star-rating';
-import timingIcon from "../../assets/icons8-clock-24.png";
-import locationIcon from "../../assets/icons8-location-50.png";
+//import timingIcon from "../../assets/icons8-clock-24.png";
+//import locationIcon from "../../assets/icons8-location-50.png";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {pixelNormalize} from "../constants/Size";
+import {pixelNormalize} from "../../constants/Size";
 
 
 const splitTextIntoLines = (text, wordsPerLine) => {
@@ -20,10 +20,10 @@ const splitTextIntoLines = (text, wordsPerLine) => {
 };
 
 const servicesData = [
-    { id: 1, name: 'Service 1', price: '$50', image: require('../../assets/icons8-car-profile-100.png') },
-    { id: 2, name: 'Service 2', price: '$70', image: require('../../assets/icons8-car-profile-100.png') },
-    { id: 3, name: 'Interior Cleaning', price: '$90', image: require('../../assets/icons8-car-profile-100.png') },
-    { id: 4, name: 'Car Interior Cleaning', price: '$100', image: require('../../assets/icons8-car-profile-100.png') },
+    { id: 1, name: 'Service 1', price: '$50', image: require('../../../assets/icons8-car-profile-100.png') },
+    { id: 2, name: 'Service 2', price: '$70', image: require('../../../assets/icons8-car-profile-100.png') },
+    { id: 3, name: 'Interior Cleaning', price: '$90', image: require('../../../assets/icons8-car-profile-100.png') },
+    { id: 4, name: 'Car Interior Cleaning', price: '$100', image: require('../../../assets/icons8-car-profile-100.png') },
     // Add more services as needed
 ];
 const ServiceItem = ({ item, selected, onPress }) => {
@@ -57,7 +57,7 @@ const reviewData = [
         rating: 4.5,
         date: 'August 25, 2023',
         reviewText: 'This was a great experience. I would highly recommend this service! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugi' ,
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     },
     {
         id: '2',
@@ -65,7 +65,7 @@ const reviewData = [
         rating: 3.8,
         date: 'August 22, 2023',
         reviewText: 'The service was good, but there\'s room for imprvement. Lorem ipsum dolor sit amet, conseclamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        profileImage: require('../../assets/pexels-pixabay-220453.jpg'),
+        profileImage: require('../../../assets/pexels-pixabay-220453.jpg'),
     } ]
 
 const ReviewItem = ({ name, rating, date, reviewText, profileImage }) => {
