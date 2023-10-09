@@ -14,6 +14,7 @@ import helpIcon from '../../../assets/question.png';
 import logoutIcon from '../../../assets/logout.png';
 import additionalLogo from '../../../assets/right-chevron.png';
 import redAdditionalLogo from '../../../assets/icons8-arrow-red.png'
+import {pixelNormalize} from "../../constants/Size";
 
 const ProfileScreen = ({ navigation }) => {
   const data = [
@@ -134,67 +135,67 @@ const ProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding:pixelNormalize( 16),
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: pixelNormalize(24),
   },
   profilePicture: {
-    width: 90,
-    height: 90,
-    borderRadius: 50,
-    marginRight: 18,
+    width: pixelNormalize(90),
+    height: pixelNormalize(90),
+    borderRadius: pixelNormalize(50),
+    marginRight: pixelNormalize(18),
     justifyContent:'center',
   },
   userInfo: {
     flex: 1,
   },
   name: {
-    fontSize: 20,
+    fontSize: pixelNormalize(20),
     fontWeight: 'bold',
     color:'#000'
   },
   email: {
-    fontSize: 16,
+    fontSize: pixelNormalize(16),
     color: '#777',
-    marginTop: 4,
+    marginTop: pixelNormalize(4),
   },
   item: {
     flexDirection: 'row', // Align icon and text horizontally
     alignItems: 'center',
-    paddingVertical: 22,
-    borderBottomWidth: 1,
+    paddingVertical:pixelNormalize( 22),
+    borderBottomWidth: pixelNormalize(1),
     justifyContent:'space-between',
     borderBottomColor: '#B9B8B1',
   },
 
   iconContainer: {
-    marginRight: 16,
+    marginRight: pixelNormalize(16),
   },
 
   icon: {
-    width: 24,
-    height: 24,
-    marginRight: 16,
+    width: pixelNormalize(24),
+    height: pixelNormalize(24),
+    marginRight: pixelNormalize(16),
   },
 
   titleContainer: {
     flex: 1,
-    marginLeft: -16, // Add a margin to the left of the title
+    marginLeft: pixelNormalize(-16),
   },
 
 
   modalContent: {
     backgroundColor: 'white',
-    borderRadius: 10,
-    padding: 16,
+    borderRadius: pixelNormalize(10),
+    padding: pixelNormalize(16),
     alignItems: 'center',
   },
   modalText: {
-    fontSize: 18,
-    marginBottom: 20,
+    fontSize: pixelNormalize(18),
+    marginBottom: pixelNormalize(20),
     color:'#000',
   },
   modalButtons: {
@@ -202,30 +203,30 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   modalButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    marginHorizontal: 10,
-    borderRadius: 5,
-    borderWidth: 1,
+    paddingVertical: pixelNormalize(10),
+    paddingHorizontal: pixelNormalize(20),
+    marginHorizontal: pixelNormalize(10),
+    borderRadius: pixelNormalize(5),
+    borderWidth: pixelNormalize(1),
     borderColor: 'lightgray',
   },
   buttonText: {
-    fontSize: 16,
+    fontSize: pixelNormalize(16),
   },
 
   itemText: {
-    fontSize: 20,
+    fontSize: pixelNormalize(20),
     color: '#181818', // Default text color
   },
   additionalLogo: {
-    width: 14, // Set the width of the additional logo image
-    height: 14, // Set the height of the additional logo image
-    marginLeft:100,
+    width: pixelNormalize(14),
+    height: pixelNormalize(14),
+    marginLeft:pixelNormalize(100),
   },
 
   logoutArrowIcon: {
-    width: 18, // Set the width of the red logout icon image (adjust as needed)
-    height: 18, // Set the height of the red logout icon image (adjust as needed)
+    width: pixelNormalize(18),
+    height: pixelNormalize(18),
   },
 
 

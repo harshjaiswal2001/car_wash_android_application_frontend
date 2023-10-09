@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {pixelNormalize} from "../../constants/Size";
 
 const PrivacyPolicyScreen = () => {
   return (
@@ -24,23 +25,23 @@ const PrivacyPolicyScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: pixelNormalize(16),
     justifyContent:'center',
   },
   title: {
-    fontSize: 24,
+    fontSize: pixelNormalize(24),
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: pixelNormalize(16),
   },
   subtitle: {
-    fontSize: 18,
+    fontSize: pixelNormalize(18),
     color:'#000000',
     fontWeight: 'bold',
-    marginTop: 16,
+    marginTop: pixelNormalize(16),
   },
   content: {
-    fontSize: 16,
-    marginTop: 8,
+    fontSize: pixelNormalize(16),
+    marginTop: pixelNormalize(8),
   },
 });
 

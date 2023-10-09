@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
+import {pixelNormalize} from "../../constants/Size";
 
 const TermsAndConditionsScreen = () => {
   return (
@@ -35,24 +36,24 @@ const TermsAndConditionsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: pixelNormalize(16),
     justifyContent:'center',
   },
   logo: {
-    width:280,
-    height:80,
-    alignSelf: 'center', // Center the logo horizontally
-    marginBottom: 16,
+    width:pixelNormalize(280),
+    height:pixelNormalize(80),
+    alignSelf: 'center',
+    marginBottom: pixelNormalize(16),
     resizeMode: "cover",
   },
   title: {
-    fontSize: 24,
+    fontSize: pixelNormalize(24),
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginBottom: pixelNormalize(16),
   },
   content: {
-    fontSize: 16,
-    marginTop: 8,
+    fontSize: pixelNormalize(16),
+    marginTop: pixelNormalize(8),
   },
 });
 

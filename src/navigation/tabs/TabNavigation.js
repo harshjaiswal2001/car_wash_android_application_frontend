@@ -8,6 +8,7 @@ import BookingScreen from '../../screens/booking/Booking';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ProfileStack from '../stacks/ProfileStack';
 import BookingStack from "../stacks/BookingStack";
+import HomeStack from "../stacks/HomeStack";
 
 const Tab = createBottomTabNavigator();
 
@@ -55,7 +56,7 @@ const AppNavigator = () => {
             >
                 <Tab.Screen
                     name="Home"
-                    component={HomeScreen}
+                    component={HomeStack}
                 />
                 <Tab.Screen
                     name="Discover"
