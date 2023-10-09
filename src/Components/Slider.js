@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { SliderBox } from 'react-native-image-slider-box';
+import {pixelNormalize} from "../constants/Size";
 
 const Carousel = () => {
   const slides = [
@@ -29,21 +30,21 @@ const styles = StyleSheet.create({
   carouselContainer: {
     flex: 1,
     alignItems: 'center',
-    margin:12,
-    padding:10,
-    top:-18
+    margin:pixelNormalize(12),
+    padding:pixelNormalize(10),
+    top:pixelNormalize(-18)
   },
   imageComponentStyle: {
-    borderRadius: 15,
+    borderRadius: pixelNormalize(15),
     width: '93%',
-    marginTop: 10,
-    margin:10,
-    height:150,
+    marginTop: pixelNormalize(10),
+    margin:pixelNormalize(10),
+    height:pixelNormalize(150),
   },
   paginationBoxStyle: {
     position: 'absolute',
-    bottom: -30,
-    paddingVertical: 10,
+    bottom: pixelNormalize(-30),
+    paddingVertical: pixelNormalize(10),
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',

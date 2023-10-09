@@ -120,40 +120,40 @@ const RecommendationScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 12,
-    marginLeft:2,
-    top:26,
+    margin: pixelNormalize(12),
+    marginLeft:pixelNormalize(2),
+    top:pixelNormalize(26),
   },
   item: {
     flex: 1,
-    margin: 10,
-    borderRadius: 12,
+    margin: pixelNormalize(10),
+    borderRadius: pixelNormalize(12),
     overflow: 'hidden',
     shadowColor: 'rgba(0, 0, 0, 0.5)',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    elevation: 3,
+    shadowOffset: { width: pixelNormalize(0), height:pixelNormalize( 2) },
+    shadowOpacity: pixelNormalize(1),
+    shadowRadius: pixelNormalize(5),
+    elevation: pixelNormalize(3),
     borderColor: '#fff',
     backgroundColor: '#f8f8ff',
-    borderWidth: 1,
+    borderWidth: pixelNormalize(1),
   },
   image: {
-    width: 170,
-    height: 125,
+    width: pixelNormalize(170),
+    height: pixelNormalize(125),
   },
   textContainer: {
-    padding: 5,
+    padding: pixelNormalize(5),
     alignItems: 'flex-start',
-    height:80
+    height:pixelNormalize(80)
 
 
   },
   title: {
-    fontSize: 15.5,
+    fontSize: pixelNormalize(15.5),
     fontWeight: 'bold',
     color:'black',
-    marginBottom:3
+    marginBottom:pixelNormalize(3)
   },
   iconContainer: {
     flexDirection: 'row',
@@ -161,15 +161,15 @@ const styles = StyleSheet.create({
   },
   favoriteIconContainer: {
     position: 'absolute',
-    top: 10,
-    right: 10,
-    zIndex: 1,
+    top: pixelNormalize(10),
+    right: pixelNormalize(10),
+    zIndex: pixelNormalize(1),
   },
   locationIconContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    left:110,
-    bottom:20
+    left:pixelNormalize(110),
+    bottom:pixelNormalize(20)
   },
   timingIcon: {
     width: pixelNormalize(14),
@@ -185,12 +185,12 @@ const styles = StyleSheet.create({
   },
   ratingText:{
     color:'black',
-    fontSize:15,
-    left:100,
-    bottom:22,
+    fontSize:pixelNormalize(15),
+    left:pixelNormalize(100),
+    bottom:pixelNormalize(22),
   },
   combineIconContainer:{
-    bottom:15
+    bottom:pixelNormalize(15)
   }
 });
 

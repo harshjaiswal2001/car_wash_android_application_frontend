@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Image, View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {pixelNormalize} from "../constants/Size";
 
 const ServiceStatus = () => {
   const [selectedServices, setSelectedServices] = useState([false, false, false]);
@@ -67,78 +68,78 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     shadowColor: 'rgba(0, 0, 0, 0.2)',
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 1,
-    shadowRadius: 5,
-    elevation: 3,
+    shadowOffset: {width: pixelNormalize(0), height:pixelNormalize( 2)},
+    shadowOpacity: pixelNormalize(1),
+    shadowRadius: pixelNormalize(5),
+    elevation: pixelNormalize(3),
     borderColor: '#fff',
     backgroundColor: '#fff',
-    borderWidth: 1,
-    borderRadius: 10,
-    margin:12,
-    top:4,
+    borderWidth: pixelNormalize(1),
+    borderRadius: pixelNormalize(10),
+    margin:pixelNormalize(12),
+    top:pixelNormalize(4),
   },
   innerContainer1: {
     flex: 1,
     flexDirection: 'row',
-    marginRight: 15,
-    marginLeft: 15,
+    marginRight: pixelNormalize(15),
+    marginLeft: pixelNormalize(15),
     overflow: 'scroll',
-    marginTop:10,
+    marginTop:pixelNormalize(10),
   },
   imageStyles: {
     width: '40%',
     height: '95%',
-    borderRadius: 10,
+    borderRadius: pixelNormalize(10),
     resizeMode:'cover'
   },
   textContainer: {
     justifyContent: 'flex-start',
-    paddingLeft: 20,
+    paddingLeft: pixelNormalize(20),
   },
   textStyle: {
-    fontSize: 18,
+    fontSize:pixelNormalize( 18),
     fontWeight: 'bold',
     color:'black'
   },
   textStyle2: {
-    fontSize: 15,
+    fontSize: pixelNormalize(15),
   },
   border: {
-    borderBottomWidth: 1.4,
+    borderBottomWidth:pixelNormalize( 1.4),
     borderStyle:'dashed',
-    marginTop:10,
+    marginTop:pixelNormalize(10),
     borderColor:'#808080',
   },
   container2: {
     flex: 1,
   },
   textStyle3: {
-    padding: 10,
+    padding: pixelNormalize(10),
     fontWeight: 'bold',
-    fontSize: 17,
+    fontSize: pixelNormalize(17),
     color:'black'
   },
   circle: {
-    height: 20,
-    width: 20,
-    borderRadius: 10,
+    height: pixelNormalize(20),
+    width: pixelNormalize(20),
+    borderRadius: pixelNormalize(10),
     borderColor: 'black',
-    borderWidth: 2,
+    borderWidth: pixelNormalize(2),
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 7,
-    marginLeft: 7,
+    marginRight: pixelNormalize(7),
+    marginLeft: pixelNormalize(7),
   },
   circleSelected: {
-    height: 20,
-    width: 20,
-    borderRadius: 10,
+    height: pixelNormalize(20),
+    width: pixelNormalize(20),
+    borderRadius: pixelNormalize(10),
     backgroundColor: '#1F5170',
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight:1,
-    marginLeft: 7,
+    marginRight:pixelNormalize(1),
+    marginLeft: pixelNormalize(7),
   },
 
   serviceItem: {
@@ -148,19 +149,19 @@ const styles = StyleSheet.create({
   costContainer: {
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginTop: -50,
-    marginRight: -180,
-    top:-40,
+    marginTop: pixelNormalize(-50),
+    marginRight: pixelNormalize(-180),
+    top:pixelNormalize(-40),
   },
   costText: {
-    fontSize: 17,
+    fontSize: pixelNormalize(17),
     color:'black',
     fontWeight:'bold',
 
   },
   costText2: {
-    fontSize: 15,
-    marginBottom:10,
+    fontSize: pixelNormalize(15),
+    marginBottom:pixelNormalize(10),
 
   },
 });
