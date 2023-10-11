@@ -10,6 +10,7 @@ import { PanGestureHandler, GestureHandlerRootView } from 'react-native-gesture-
 import {pixelNormalize} from "../constants/Size";
 import favoriteImage from "../../assets/icons8-heart-50.png";
 import nonFavoriteImage from "../../assets/heart-favorite-icon.png";
+import {useNavigation} from "@react-navigation/native";
 
 
 // Sample shop data
@@ -62,7 +63,8 @@ const shopData = [
   // Add more shop data as needed
 ];
 
-const HorizontalImageFlatList = ({navigation}) => {
+const HorizontalImageFlatList = () => {
+  const navigation = useNavigation();
   const [favorites, setFavorites] = useState({}); // Store favorite status for each shop
   const [openSwipeableId, setOpenSwipeableId] = useState(null);
 
@@ -75,12 +77,6 @@ const HorizontalImageFlatList = ({navigation}) => {
   };
   const favoriteImage = require('../../assets/icons8-heart-50.png');
   const nonFavoriteImage = require('../../assets/heart-favorite-icon.png');
-  const handleDeleteFavorite = ({ id }) => {
-    // Remove the favorite item with the given id
-    const updatedShopData = shopData.filter((item) => item.id !== id);
-    setFavorites(updatedShopData);
-  };
-
 
 
 
@@ -89,8 +85,7 @@ const HorizontalImageFlatList = ({navigation}) => {
   const renderShopItem = ({ item }) => {
 
     return (
-        <GestureHandlerRootView style={{ flex: 1 }}>
-          <PanGestureHandler>
+
             <TouchableOpacity onPress={() => navigation.push('BookNowScreen')}>
 
                 <ImageBackground source={item.image} style={styles.shopItem}>
@@ -147,23 +142,20 @@ const HorizontalImageFlatList = ({navigation}) => {
                 </ImageBackground>
 
             </TouchableOpacity>
-          </PanGestureHandler>
-        </GestureHandlerRootView>
+
     );
   };
 
   return (
 
       <View style={styles.container}>
-        <FlatList style={{flex:1}}
-                  data={shopData}
-                  keyExtractor={(item) => item.id}
-                  renderItem={renderShopItem}
-                  nestedScrollEnabled={true}
-                  horizontal={true}
-                  showsHorizontalScrollIndicator={false}
+        <FlatList
+            data={shopData}
+            keyExtractor={(item) => item.id}
+            renderItem={renderShopItem}
+            horizontal
+            showsHorizontalScrollIndicator={false}
         />
-
       </View>
 
 
@@ -173,7 +165,7 @@ const HorizontalImageFlatList = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
    flex: 1,
-    top:pixelNormalize(555),
+    top:pixelNormalize(450),
   },
   shopItem: {
     margin: pixelNormalize(6),
