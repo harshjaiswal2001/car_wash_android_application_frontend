@@ -99,8 +99,8 @@ const BookingHistoryScreen = ({navigation}) => {
         };
 
         return (
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <PanGestureHandler>
+            // <GestureHandlerRootView >
+            //     <PanGestureHandler>
                     <TouchableOpacity onPress={() => navigation.push('BookingHistoryDetails')}>
                 <Swipeable
                     renderRightActions={rightSwipeActions}
@@ -163,8 +163,8 @@ const BookingHistoryScreen = ({navigation}) => {
                     </ImageBackground>
                 </Swipeable>
             </TouchableOpacity>
-                </PanGestureHandler>
-            </GestureHandlerRootView>
+            //     </PanGestureHandler>
+            // </GestureHandlerRootView>
         );
     };
 

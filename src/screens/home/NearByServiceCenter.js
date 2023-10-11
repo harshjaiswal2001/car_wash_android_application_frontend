@@ -96,8 +96,8 @@ const NearByServiceCenterScreen = ({navigation}) => {
         };
 
         return (
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <PanGestureHandler>
+            // <GestureHandlerRootView style={{ flex: 1 }}>
+            //     <PanGestureHandler>
                     <TouchableOpacity onPress={() => navigation.push('BookNowScreen')}>
                         <Swipeable
                             renderRightActions={rightSwipeActions}
@@ -159,8 +159,8 @@ const NearByServiceCenterScreen = ({navigation}) => {
                             </ImageBackground>
                         </Swipeable>
                     </TouchableOpacity>
-                </PanGestureHandler>
-            </GestureHandlerRootView>
+            // {/*    </PanGestureHandler>*/}
+            // {/*</GestureHandlerRootView>*/}
         );
     };
 

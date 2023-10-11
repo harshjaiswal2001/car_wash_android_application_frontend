@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TextInput, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TextInput, Text, TouchableOpacity, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MapView from 'react-native-maps';
 import HorizontalImageFlatList from '../../components/Recommendation2';
-import {pixelNormalize} from "../../constants/Size";
-import {useNavigation} from "@react-navigation/native";
-
+import { pixelNormalize } from "../../constants/Size";
+import { useNavigation } from "@react-navigation/native";
 
 const DiscoverScreen = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
-            {/* MapView covering the whole screen */}
+        <ScrollView contentContainerStyle={styles.container}>
             <MapView
                 style={styles.map}
                 initialRegion={{
@@ -22,11 +20,8 @@ const DiscoverScreen = () => {
                     longitudeDelta: 0.0421,
                 }}
             />
-
             <View style={styles.contentContainer}>
                 <Text style={styles.header}>Discover</Text>
-
-                {/* Search bar */}
                 <View style={styles.searchBarContainer}>
                     <TextInput
                         style={styles.searchBar}
@@ -37,55 +32,46 @@ const DiscoverScreen = () => {
                         }}
                     />
                 </View>
-
             </View>
-
-            {/* FlatList component */}
-            <HorizontalImageFlatList  navigation={navigation}/>
-        </View>
+            <HorizontalImageFlatList navigation={navigation} />
+        </ScrollView>
     );
 };
 
+
 const styles = StyleSheet.create({
+
     container: {
-        flex: 1,
-        position: 'relative',
+        flexGrow: 1,
     },
     map: {
         ...StyleSheet.absoluteFillObject,
     },
     contentContainer: {
-        position: 'absolute',
-        top: pixelNormalize(0),
-        left: pixelNormalize(0),
-        right: pixelNormalize(0),
         padding: pixelNormalize(16),
         backgroundColor: 'transparent',
     },
     header: {
-        fontSize:pixelNormalize(21),
+        fontSize: pixelNormalize(21),
         color: '#293E73',
         fontWeight: 'bold',
-        left:pixelNormalize(140),
-        top:pixelNormalize(-15)
+        left: pixelNormalize(140),
+        top: pixelNormalize(-15)
     },
     searchBarContainer: {
-
         backgroundColor: 'white',
         borderRadius: pixelNormalize(10),
         padding: pixelNormalize(5),
         borderColor: '#fff',
         shadowColor: '#000',
-        shadowOffset: { width: pixelNormalize(0), height:pixelNormalize( 2 )},
+        shadowOffset: { width: pixelNormalize(0), height: pixelNormalize(2) },
         shadowOpacity: pixelNormalize(0.3),
         shadowRadius: pixelNormalize(3),
         elevation: pixelNormalize(3),
-
     },
     searchBar: {
-        fontSize:pixelNormalize(16),
+        fontSize: pixelNormalize(16),
     },
-
 });
 
 export default DiscoverScreen;

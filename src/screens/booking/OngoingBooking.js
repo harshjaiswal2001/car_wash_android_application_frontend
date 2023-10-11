@@ -98,8 +98,8 @@ const OngoingBookingScreen = ({navigation}) => {
         };
 
         return (
-            <GestureHandlerRootView style={{ flex: 1 }}>
-                <PanGestureHandler>
+            // <GestureHandlerRootView style={{ flex: 1 }}>
+            //     <PanGestureHandler>
             <TouchableOpacity onPress={() => navigation.push('BookingDetails')}>
                 <Swipeable
                     renderRightActions={rightSwipeActions}
@@ -160,8 +160,8 @@ const OngoingBookingScreen = ({navigation}) => {
                     </ImageBackground>
                 </Swipeable>
             </TouchableOpacity>
-                </PanGestureHandler>
-            </GestureHandlerRootView>
+            //     </PanGestureHandler>
+            // </GestureHandlerRootView>
         );
     };
 
