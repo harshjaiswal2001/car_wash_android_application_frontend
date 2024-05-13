@@ -42,21 +42,21 @@ const ServiceCenter = () => {
 
 
     const renderShopItem = ({ item }) => {
-        const rightSwipeActions = (progress, dragX) => {
-            const transX = dragX.interpolate({
-                inputRange: [-100, 0],
-                outputRange: [100, 0],
-            });
-
-            return (
-                <TouchableOpacity
-                    style={styles.deleteButton}
-                    onPress={() => handleDeleteFavorite(item.id)}
-                >
-                    <Image source={deleteIcon} style={styles.deleteIcon} />
-                </TouchableOpacity>
-            );
-        };
+        // const rightSwipeActions = (progress, dragX) => {
+        //     const transX = dragX.interpolate({
+        //         inputRange: [-100, 0],
+        //         outputRange: [100, 0],
+        //     });
+        //
+        //     return (
+        //         <TouchableOpacity
+        //             style={styles.deleteButton}
+        //             onPress={() => handleDeleteFavorite(item.id)}
+        //         >
+        //             <Image source={deleteIcon} style={styles.deleteIcon} />
+        //         </TouchableOpacity>
+        //     );
+        // };
 
         return (
             <GestureHandlerRootView style={{ flex: 1 }}>

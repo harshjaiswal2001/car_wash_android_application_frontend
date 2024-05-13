@@ -135,7 +135,7 @@ const ConfirmationScreen = () => {
 
                 {/* Circular call icon button */}
                 <TouchableOpacity onPress={handleCallShop} style={styles.callButton}>
-                    <Icon name="phone" size={22} color="navy" />
+                    <Icon name="phone" size={22} color="#1F5170" />
                 </TouchableOpacity>
             </View>
             <View style={styles.secondContainer}>
@@ -146,22 +146,22 @@ const ConfirmationScreen = () => {
 
             </View>
                 < TouchableOpacity style={styles.editButton}  onPress={handleEdit}>
-                <Icon name="pencil" size={24} color="navy" />
+                <Icon name="pencil" size={24} color="#1F5170" />
                 </TouchableOpacity>
             <View style={styles.bottomBorderOne} />
 
             <Modal visible={isModalVisible} transparent animationType="slide">
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
-                        <Text style={styles.modalTitle}>Edit Service Details</Text>
+                        <Text style={styles.modalTitle}>Select date and time</Text>
 
-                        <Text style={styles.modalSubtitle}>Select Date:</Text>
+                        <Text style={styles.modalSubtitle}>Select date:</Text>
 
 
 
                         <View style={styles.dateScrollContainer}>
                             <TouchableOpacity onPress={scrollDateLeft}>
-                                <Icon name="chevron-left" size={30} color="black" />
+                                <Icon name="chevron-left" size={20} color="grey" />
                             </TouchableOpacity>
                             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                                 {dateOptions.map((option, index) => (
@@ -178,12 +178,12 @@ const ConfirmationScreen = () => {
                                     </TouchableOpacity>
                                 ))}
                             </ScrollView>
-                            <TouchableOpacity onPress={scrollDateRight}>
-                                <Icon name="chevron-right" size={30} color="black" />
+                            <TouchableOpacity onPress={scrollDateRight} >
+                                <Icon name="chevron-right" size={20} color="grey" />
                             </TouchableOpacity>
                         </View>
 
-                        <Text style={styles.modalSubtitle}>Select Time:</Text>
+                        <Text style={styles.modalSubtitle}>Select time:</Text>
                         <FlatList
                             data={timeSlots}
                             numColumns={3}
@@ -192,10 +192,10 @@ const ConfirmationScreen = () => {
                                 <TimeSlotItem timeSlot={item} onPress={handleTimeSlotPress} />
                             )}
                         />
+                        <TouchableOpacity onPress={() => setModalVisible(false)} style={styles.modalChangeButton}>
+                            <Text style={styles.modalChangeButtonText}>Change</Text>
+                        </TouchableOpacity>
 
-                        <TouchableOpacity onPress={() => setModalVisible(false)}>
-                        <Text style={styles.modalClose}>Close</Text>
-                    </TouchableOpacity>
                 </View>
         </View>
 </Modal>
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     },
     amount:{
         fontSize:pixelNormalize(19),
-        color:"darkblue",
+        color:"#1F5170",
         letterSpacing:pixelNormalize(0.3),
         padding:pixelNormalize(4),
         fontWeight: 'bold',
@@ -408,7 +408,7 @@ const styles = StyleSheet.create({
     },
     discountAmount: {
         fontSize: pixelNormalize(19),
-        color: "darkblue",
+        color: "#1F5170",
         letterSpacing: pixelNormalize(0.3),
         padding: pixelNormalize(4),
         fontWeight: 'bold',
@@ -417,7 +417,7 @@ const styles = StyleSheet.create({
     },
 
     payNowButton: {
-        backgroundColor: 'navy',
+        backgroundColor: '#1F5170',
         borderRadius: pixelNormalize(10),
         paddingVertical: pixelNormalize(12),
         alignItems: 'center',
@@ -449,20 +449,21 @@ const styles = StyleSheet.create({
         fontSize: pixelNormalize(22),
         fontWeight: 'bold',
         marginBottom: pixelNormalize(10),
-        color:'black'
+        color:'black',
+        textAlign:"center"
     },
     modalSubtitle: {
         fontSize: pixelNormalize(18),
         fontWeight:'bold',
         marginBottom: pixelNormalize(5),
-        color:'navy',
+        color:'black',
         marginTop:pixelNormalize(10)
 
 
     },
     modalClose: {
         fontSize: pixelNormalize(18),
-        color: 'blue',
+        color: '#1F5170',
         marginTop:pixelNormalize(10),
         textAlign: 'right',
     },
@@ -474,6 +475,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: pixelNormalize(10),
         paddingVertical:pixelNormalize( 5),
         backgroundColor: '#F0F0F0',
+
+
     },
     date: {
         fontSize: pixelNormalize(16),
@@ -490,7 +493,7 @@ const styles = StyleSheet.create({
         paddingVertical: pixelNormalize(5),
         paddingHorizontal: pixelNormalize(10),
         borderRadius: pixelNormalize(10),
-        backgroundColor: 'navy',
+        backgroundColor: '#1F5170',
         color: 'white',
     },
     timeSlotItem: {
@@ -513,6 +516,19 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginHorizontal: pixelNormalize(20),
         marginTop: pixelNormalize(10),
+    },
+    modalChangeButton: {
+        backgroundColor: '#1F5170',
+        borderRadius: pixelNormalize(10),
+        paddingVertical: pixelNormalize(12),
+        alignItems: 'center',
+        width: '100%',
+        marginTop: pixelNormalize(20),
+    },
+    modalChangeButtonText: {
+        color: 'white',
+        fontSize: pixelNormalize(18),
+        fontWeight: 'bold',
     },
 
 
